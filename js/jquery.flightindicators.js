@@ -49,7 +49,7 @@
 					_setVario(settings.vario);
 				break;
 				case 'turn_coordinator':
-					$(this).html('<div class="instrument turn_coordinator"><img src="' + settings.img_directory + 'turn_coordinator_sep_b.svg" class="box" alt="" />            <div class="turn box"><img src="' + settings.img_directory + 'fi_tc_airplane.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
+					$(this).html('<div class="instrument turn_coordinator"><img src="' + settings.img_directory + 'turn_coordinator.svg" class="box" alt="" /><div class="turn box"><img src="' + settings.img_directory + 'turn_coordinator_airplane.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
 					_setTurn(settings.turn);
 				break;
 				case 'airspeed':
