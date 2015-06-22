@@ -1,3 +1,7 @@
+This fork is modelled after a Cessna 172 dashboard. WIP for now.
+
+
+
 Flight Indicators jQuery plugin [![GitHub version](https://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators.svg)](http://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators) 
 ===================
 
