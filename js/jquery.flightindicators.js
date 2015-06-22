@@ -23,7 +23,7 @@
 			airspeed: 0,
 			altitude: 0,
 			pressure: 1000,
-			pressure2: 0,
+			pressure2: 30.0,
 			showBox : true,
 			img_directory : 'img/'
 		}, options );
@@ -145,7 +145,7 @@
 		}
 
 		function _setPressure(pressure){
-			pressure = 2*pressure - 1980;
+			pressure = (1000 - pressure) * 2;
 			placeholder.each(function(){
 				$(this).find('div.instrument.altimeter div.pressure').css('transform', 'rotate(' + pressure + 'deg)');
 			});	
@@ -153,7 +153,7 @@
 
 		// WIP
 		function _setPressure2(pressure){
-			pressure = 2*pressure - 1980;
+			pressure = (30 - pressure) * 60;
 			placeholder.each(function(){
 				$(this).find('div.instrument.altimeter div.pressure2').css('transform', 'rotate(' + pressure + 'deg)');
 			});	
