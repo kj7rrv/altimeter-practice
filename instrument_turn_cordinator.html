@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+	<meta charset="utf-8">
+	<title>Turning Cordinator</title>
+	<meta name="description" content="">
+	<meta name="author" content="Edward Hanna">
+	<meta name="viewport" content="width=device-width">
+	
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!-- Flight Indicators library styles -->
+	
+	<style>
+	/* Walker */
+	.walker{ position:absolute; z-index:1; font-size:25px; color:deeppink; height:1px; width:1px; text-align:center; line-height:1px; margin:1px 0 0 1px; text-shadow:1px 0px 1px rgba(0,0,0,0.3), 1px 0; }
+	.walkerBg{ position:absolute; z-index:1; font-size:21px; color:rgb(131, 131, 131); height:1px; width:1px; text-align:center; line-height:1px; margin:1px 0 0 1px; text-shadow:1px 0px 1px rgba(0,0,0,0.3), 1px 0; opacity: .7; -webkit-text-stroke-width: 7px; text-shadow: 4px 0 0 rgb(131, 131, 131), -4px 0 0 rgb(131, 131, 131), 0 4px 0 rgb(131, 131, 131), 0 -4px 0 rgb(131, 131, 131), 3px 3px rgb(131, 131, 131), -3px -3px 0 rgb(131, 131, 131), 3px -3px 0 rgb(131, 131, 131), -3px 3px 0 rgb(131, 131, 131); font-weight: bold;}
+	.walkerBgP{ position:absolute; z-index:1; font-size:21px; color:rgb(131, 131, 131); height:1px; width:1px; text-align:center; line-height:1px; margin:1px 0 0 1px; text-shadow:1px 0px 1px rgba(0,0,0,0.3), 1px 0; opacity: .7; -webkit-text-stroke-width: 7px; text-shadow: 4px 0 0 rgb(131, 131, 131), -4px 0 0 rgb(131, 131, 131), 0 4px 0 rgb(131, 131, 131), 0 -4px 0 rgb(131, 131, 131), 3px 3px rgb(131, 131, 131), -3px -3px 0 rgb(131, 131, 131), 3px -3px 0 rgb(131, 131, 131), -3px 3px 0 rgb(131, 131, 131); font-weight: bold;}
+	.panelOnly{ position:absolute;}
+	.overWalker{ left: 145px; top: 197px; position: absolute; width: 200px; height: 200px; margin-bottom: -200px; z-index:2; }
+	.overPanel{ left: 0px; top: 0px; position: absolute; width: 200px; height: 200px; margin-bottom: -200px; z-index:2; }
+	.maze{ left: 450px; top: 20px; position: absolute; width: 200px; height: 200px; margin-bottom: -200px; }
+	</style>
+	
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+</head>
+<body>	
+
+	<div class='maze'>
+		<div>
+            <span id="turn_coordinator"></span>
+        </div>
+		<div>
+			<button id="turnCoordinatorRollButton" class="btn btn-default" type="submit">Start</button>
+		</div>
+		<div class='walker'><span class='walkerBg'>0</span></div>
+		<div class='overWalker'><span class='walkerBgP'>0</span></div>
+		<div class='overPanel'><img src="img/turn_coordinator_sep_b_panel.svg" class="panelTodo" alt="" width="300" height="300"></div>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- Importing the FlightIndicators library -->
+	<script src="js/jquery.flightindicators.js"></script>
+	<!-- Let start our scripts -->
+	<script src='js/pathAnimator.js'></script>
+	<script src='js/main.js'></script>
+	
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+
+	$("#turnCoordinatorRollButton").text("Start");
+	
+	$(".walker").hide();
+
+});
+
+			
+</script>
+</body> 
+</html>

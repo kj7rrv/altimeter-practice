@@ -1,0 +1,91 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <title>Heading Indicator</title>
+</head>
+<body>
+    <div class="examples text-center">
+        <div>
+            <span id="heading"></span>
+        </div>
+		<div>
+		<button id="headingButton" class="btn btn-default" type="submit">Button</button>
+		</div>
+    </div>
+
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
+<script type="text/javascript">
+
+// Update at 20Hz
+var increment = 0;
+var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox:true});
+
+function doHeading(){
+
+var myInterval = setInterval(function() {
+
+	$("#headingButton").text("Playing");
+    increment++;
+	
+	// Heading update
+    heading.setHeading(increment);
+    heading.setBeaconRed(increment * 2, true);
+    heading.setBeaconGreen(-increment * 3, true);
+	
+	if(increment == 157){
+	$("#headingButton").text("Start");
+	clearInterval(myInterval);
+	$("#headingButton").attr('disabled',false);
+	heading.setHeading(0);
+	}
+
+}, 50);
+
+}
+	
+	$("#headingButton").text("Start");
+
+	$("#headingButton").on("click", function() {
+		$("#headingButton").attr('disabled', true);
+		
+		doHeading();
+		
+	});
+			
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

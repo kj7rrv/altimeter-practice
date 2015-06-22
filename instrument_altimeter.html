@@ -1,0 +1,91 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <title>Altimeter Indicator</title>
+</head>
+<body>
+    <div class="examples text-center">
+        <div>
+            <span id="altimeter"></span>
+        </div>
+		<div>
+			<button id="altimiterButton" class="btn btn-default" type="submit">Button</button>
+        </div>
+    </div>
+
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
+<script type="text/javascript">
+
+// Update at 20Hz
+var increment = 0;
+var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+
+function doAltimeter(){
+
+	var myInterval = setInterval(function() {
+
+		// Altimeter update
+		altimeter.setAltitude(3*increment);
+		altimeter.setPressure(1000+3*Math.sin(increment/50));
+		altimeter.setPressure2(3*Math.sin(-increment/50));
+		increment++;
+		
+		if(increment == 5000){
+			clearInterval(myInterval);
+			$("#altimiterButton").attr('disabled',false);
+			$("#altimiterButton").text("Start");
+			altimeter.setAltitude(0);
+			altimeter.setPressure(0);
+		}
+
+	}, 50);
+
+}
+
+$("#altimiterButton").text("Start");
+
+$("#altimiterButton").on("click", function() {
+	$("#altimiterButton").attr('disabled', true);
+	$("#altimiterButton").text("Playing");
+
+	doAltimeter();
+	
+});
+			
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

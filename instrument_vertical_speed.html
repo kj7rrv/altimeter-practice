@@ -1,0 +1,74 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <title>Variometer</title>
+</head>
+<body>
+    <div class="examples text-center">
+        <div>
+            <span id="variometer"></span>
+        </div>
+		<div>
+		<button id="variometerButton" class="btn btn-default" type="submit">Button</button>
+		</div>
+    </div>
+
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
+<script type="text/javascript">
+
+// Update at 20Hz
+var increment = 0;
+var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox:true});
+
+function doVariometer(){
+
+var myInterval = setInterval(function() {
+
+	$("#variometerButton").text("Playing");
+    increment++;
+
+	// Vario update
+    variometer.setVario(2*Math.sin(increment/10));
+	
+	if(increment == 157){
+	clearInterval(myInterval);
+	$("#variometerButton").attr('disabled',false);
+	variometer.setVario(0);
+	$("#variometerButton").text("Start");
+	}
+
+}, 50);
+
+}
+	$("#variometerButton").text("Start");
+	
+	$("#variometerButton").on("click", function() {
+		$("#variometerButton").attr('disabled', true);
+		
+		doVariometer();
+		
+	});
+			
+</script>
+</body>
+</html>

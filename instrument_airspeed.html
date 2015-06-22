@@ -1,0 +1,99 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <title>Airspeed Indicator</title>
+</head>
+<body>
+    <div class="examples text-center">
+        <div>
+            <span id="airspeed"></span>
+        </div>
+		<div>
+			<button id="airspeedButton" class="btn btn-default" type="submit">Button</button>
+        </div>
+    </div>
+
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
+<script type="text/javascript">
+
+// Update at 20Hz
+var increment = 0;
+var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: true});
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function doAirSpeed(){
+
+	var myInterval = setInterval(function() {
+
+		// Airspeed update
+		airspeed.setAirSpeed(increment);
+		increment++;
+		
+		if(increment == 180){
+			clearInterval(myInterval);
+			sleep(1000);
+			$("#airspeedButton").attr('disabled',false);
+			$("#airspeedButton").text("Start");
+			increment = 0;
+			airspeed.setAirSpeed(0);
+		}
+
+	}, 50);
+
+}
+
+$("#airspeedButton").text("Start");
+
+$("#airspeedButton").on("click", function() {
+	$("#airspeedButton").attr('disabled', true);
+	$("#airspeedButton").text("Playing");
+	
+	doAirSpeed();
+	
+});
+			
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

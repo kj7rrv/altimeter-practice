@@ -1,0 +1,246 @@
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Flight Indicators library styles -->
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <title>Attitude Indicator</title>
+</head>
+<body>
+    <div class="examples text-center">
+        <div>
+            <span id="attitude"></span>
+        </div>
+		<div>
+			<button id="attitudePitchUp" class="btn btn-default" type="submit">Pitch Up</button>
+			<button id="attitudePitchDown" class="btn btn-default" type="submit">Pitch Down</button>
+		</div>
+		<div>
+			<button id="attitudeBankLeft" class="btn btn-default" type="submit">Bank Left</button>
+			<button id="attitudeBankRight" class="btn btn-default" type="submit">Bank Right</button>
+		</div>
+    </div>
+
+<!-- Importing jQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<!-- Importing the FlightIndicators library -->
+<script src="js/jquery.flightindicators.js"></script>
+
+<!-- Let start our scripts -->
+<script type="text/javascript">
+
+// Update at 20Hz
+var increment = 0;
+var attitude = $.flightIndicator('#attitude', 'attitude', {roll:0, pitch:0, size:200, showBox : true});
+
+function doAttitudeBankRight(){
+
+var myInterval = setInterval(function() {
+
+	// Attitude update
+    attitude.setRoll(increment);
+
+	//console.log(" Increment " + increment);
+	
+    increment--;
+	
+	if(increment == -20){
+	clearInterval(myInterval);
+	--increment;
+
+		myInterval = setInterval(function() {
+		
+		++increment;
+		
+		// Attitude update
+		attitude.setRoll(increment);
+		
+		//console.log(" Increment " + increment);
+		
+		if(increment == 0){
+			clearInterval(myInterval);
+			$("#attitudeBankRight").attr('disabled',false);
+			$("#attitudeBankRight").text("Bank Right");
+		}
+		
+		}, 50);
+
+	}
+
+}, 50);
+
+}
+
+function doAttitudeBankLeft(){
+
+var myInterval = setInterval(function() {
+
+	// Attitude update
+    attitude.setRoll(increment);
+
+	//console.log(" Increment " + increment);
+	
+    increment++;
+	
+	if(increment == 20){
+	clearInterval(myInterval);
+
+		myInterval = setInterval(function() {
+		
+		--increment;
+		
+		// Attitude update
+		attitude.setRoll(increment);
+		
+		//console.log(" Increment " + increment);
+		
+		if(increment == 0){
+			clearInterval(myInterval);
+			$("#attitudeBankLeft").attr('disabled',false);
+			$("#attitudeBankLeft").text("Bank Left");
+		}
+		
+		}, 50);
+
+	}
+
+}, 50);
+
+}
+
+function doPitchUp(){
+
+var myInterval = setInterval(function() {
+
+	// Attitude update
+    attitude.setPitch(50*Math.sin(increment/20));
+
+	//console.log("Math " + 30*Math.sin(increment/10) + " Increment " + increment);
+	
+    increment++;
+	
+	if(increment == 20){
+	clearInterval(myInterval);
+	--increment;
+		myInterval = setInterval(function() {
+		
+		--increment;
+		
+		// Attitude update
+		attitude.setPitch(50*Math.sin(increment/20));
+		
+		//console.log("Down Math " + 30*Math.sin(increment/10) + " Increment " + increment);
+		
+		if(increment == 0){
+			clearInterval(myInterval);
+			$("#attitudePitchUp").attr('disabled',false);
+			$("#attitudePitchUp").text("Pitch Up");
+		}
+		
+		}, 50);
+
+	}
+
+}, 50);
+
+}
+
+function doPitchDown(){
+
+var myInterval = setInterval(function() {
+
+	// Attitude update
+    attitude.setPitch(50*Math.sin(increment/20));
+
+	//console.log("Math " + 30*Math.sin(increment/10) + " Increment " + increment);
+	
+    increment--;
+	
+	if(increment == -20){
+	clearInterval(myInterval);
+	--increment;
+
+		myInterval = setInterval(function() {
+		
+		++increment;
+		
+		// Attitude update
+		attitude.setPitch(50*Math.sin(increment/20));
+		
+		//console.log("Down Math " + 30*Math.sin(increment/10) + " Increment " + increment);
+		
+		if(increment == 0){
+			clearInterval(myInterval);
+			$("#attitudePitchDown").attr('disabled',false);
+			$("#attitudePitchDown").text("Pitch Down");
+		}
+		
+		}, 50);
+
+	}
+
+}, 50);
+
+}
+
+$("#attitudeBankRight").on("click", function() {
+	$("#attitudeBankRight").attr('disabled', true);
+	$("#attitudeBankRight").text("Playing");
+	
+	doAttitudeBankRight();
+	
+});
+
+$("#attitudeBankLeft").on("click", function() {
+	$("#attitudeBankLeft").attr('disabled', true);
+	$("#attitudeBankLeft").text("Playing");	
+	
+	doAttitudeBankLeft();
+	
+});
+
+$("#attitudePitchUp").on("click", function() {
+	$("#attitudePitchUp").attr('disabled', true);
+	$("#attitudePitchUp").text("Playing");
+	
+	doPitchUp();
+	
+});
+
+$("#attitudePitchDown").on("click", function() {
+	$("#attitudePitchDown").attr('disabled', true);
+	$("#attitudePitchDown").text("Playing");
+	
+	doPitchDown();
+	
+});
+			
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
