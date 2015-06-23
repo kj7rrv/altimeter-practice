@@ -14,7 +14,7 @@
 			roll : 0,
 			pitch : 0,
 			turn : 0,
-			slip: 30,
+			slip: 100,
 			heading: 0,
 			beaconred: 90,
 			beaconredshow: true,
@@ -51,7 +51,7 @@
 				break;
 				case 'turn_coordinator':
 					//$(this).html('<div class="instrument turn_coordinator"><img src="' + settings.img_directory + 'turn_coordinator.svg" class="box" alt="" /><div class="turn box"><img src="' + settings.img_directory + 'turn_coordinator_airplane.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
-					$(this).html('<div class="instrument turn_coordinator"><div class="background box"><img src="' + settings.img_directory + 'turn_coordinator_background.svg" class="box" alt="" /></div><div class="turn box"><img src="' + settings.img_directory + 'turn_coordinator_airplane.svg" class="box" alt="" /></div><div class="foreground box"><img src="' + settings.img_directory + 'turn_coordinator_foreground.svg" class="box" alt="" /></div><div class="ball box"><img src="' + settings.img_directory + 'turn_coordinator_ball.svg" class="box" alt="" /></div><div class="shine box"><img src="' + settings.img_directory + 'turn_coordinator_foreground_shine.svg" class="box" alt="" /></div><div class="path box"><img src="' + settings.img_directory + 'turn_coordinator_ball_path.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument turn_coordinator"><div class="background box"><img src="' + settings.img_directory + 'turn_coordinator_background.svg" class="box" alt="" /></div><div class="ball box"><img src="' + settings.img_directory + 'turn_coordinator_ball.svg" class="box" alt="" /></div><div class="shine box"><img src="' + settings.img_directory + 'turn_coordinator_foreground_shine.svg" class="box" alt="" /></div><div class="turn box"><img src="' + settings.img_directory + 'turn_coordinator_airplane.svg" class="box" alt="" /></div><div class="foreground box"><img src="' + settings.img_directory + 'turn_coordinator_foreground.svg" class="box" alt="" /></div><div class="path box"><img src="' + settings.img_directory + 'turn_coordinator_ball_path.svg" class="box" alt="" /></div></div>');
 					_setTurn(settings.turn);
 					_setSlip(settings.slip);
 				break;
@@ -98,14 +98,20 @@
 
 		function _setBeaconRed(heading, visible){
 			if (visible) placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beaconred').css('transform', 'rotate(' + heading + 'deg)');
+				$(this).find('div.instrument.heading div.beaconred').show().css('transform', 'rotate(' + heading + 'deg)');
 			});	
+			else placeholder.each(function(){
+				$(this).find('div.instrument.heading div.beaconred').hide();
+			});
 		}		
 
 		function _setBeaconGreen(heading, visible){
 			if (visible) placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beacongreen').css('transform', 'rotate(' + heading + 'deg)');
+				$(this).find('div.instrument.heading div.beacongreen').show().css('transform', 'rotate(' + heading + 'deg)');
 			});	
+			else placeholder.each(function(){
+				$(this).find('div.instrument.heading div.beacongreen').hide();
+			});
 		}				
 
 		function _setTurn(turn){
@@ -114,7 +120,7 @@
 			});
 		}
 
-		function _setSlip(slip) {
+		function _setSlip(slip) {	
 			placeholder.each(function(){
 				$(this).find('div.instrument.turn_coordinator div.ball').css('transform', 'rotate('+ slip +'deg)');
 			});

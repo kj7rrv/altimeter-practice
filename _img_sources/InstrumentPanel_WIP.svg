@@ -2082,18 +2082,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2"
-     inkscape:cx="867.42195"
-     inkscape:cy="554.7828"
+     inkscape:cx="266.73245"
+     inkscape:cy="194.1672"
      inkscape:document-units="px"
-     inkscape:current-layer="altimeterRightHand"
+     inkscape:current-layer="instrumentPanel"
      showgrid="false"
      units="px"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="1142"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      guidetolerance="20"
      gridtolerance="10">
@@ -4427,8 +4427,7 @@
      id="layer5"
      inkscape:label="turncoordinator"
      style="display:inline"
-     transform="translate(0,416)"
-     sodipodi:insensitive="true">
+     transform="translate(0,416)">
     <g
        style="display:inline;opacity:1"
        inkscape:label="Dial - Turn Coordinator - Bg"
@@ -4613,7 +4612,7 @@
        transform="translate(-47.997196,45.99998)">
       <g
          id="g8303"
-         inkscape:transform-center-x="-6.5346367e-005"
+         inkscape:transform-center-x="-6.5346367e-05"
          inkscape:transform-center-y="-12.019229">
         <path
            style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter8286)"
@@ -4935,7 +4934,8 @@
      id="layer1"
      inkscape:label="altimeter"
      style="display:inline"
-     transform="translate(0,416)">
+     transform="translate(0,416)"
+     sodipodi:insensitive="true">
     <g
        style="display:inline"
        inkscape:label="Dial - Altimeter - Right Pressure"
