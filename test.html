@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<style>
+
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+circle {
+  fill: steelblue;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script>
+
+var points1 = [
+  [480, 200],
+  [580, 400],
+  [380, 400]
+];
+
+var points2 = [
+  [480, 200],
+  [380, 400],
+  [580, 400]  
+];
+
+var svg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+var path1 = svg.append("path")
+    .attr("id", "movepath")
+    .data([points1])
+    .attr("d", d3.svg.line()
+    .tension(0) // Catmull–Rom
+    .interpolate("cardinal-closed"));
+
+var path2 = svg.append("path")
+    .attr("id", "movepath")
+    .data([points2])
+    .attr("d", d3.svg.line()
+    .tension(0) // Catmull–Rom
+    .interpolate("cardinal-closed"));
+
+
+var circle = svg.append("ellipse")
+    .attr("id", "mover")
+    .attr("rx", 9.7499981)
+    .attr("ry", 14.089322)
+    .attr("transform", "translate(" + points1[0] + ")");
+
+
+// Potentially horrible performance wise
+
+function transition(percent) {
+  var path = (percent < 0) ? path2: path1;
+  var perc = (percent < 0) ? -percent: percent;
+  circle.transition().duration(0).attrTween("transform", translateAlong(path.node(), perc));
+}
+
+function translateAlong(path, percent) {
+  var l = path.getTotalLength() * percent / 100;
+  return function(d, i, a) {
+    return function(t) {
+      var p = path.getPointAtLength(t * l);
+      return "translate(" + p.x + "," + p.y + ")";
+    };
+  };
+}
+
+</script>
