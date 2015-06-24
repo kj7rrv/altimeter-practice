@@ -16,15 +16,14 @@
 			turn : 0,
 			slip: 0,
 			heading: 0,
-			beaconred: 90,
-			beaconredshow: true,
-			beacongreen: 30,
-			beacongreenshow: true,
+			beaconone: 90,
+			beacononeshow: true,
+			beacontwo: 30,
+			beacontwoshow: true,
 			vario: 0,
 			airspeed: 0,
 			altitude: 0,
-			pressure: 1000,
-			pressure2: 30.0,
+			pressure: 1135,
 			showBox : true,
 			img_directory : 'img/'
 		}, options );
@@ -40,10 +39,10 @@
 		placeholder.each(function(){
 			switch(type){
 				case 'heading':
-					$(this).html('<div class="instrument heading"><div class="heading box"><img src="' + settings.img_directory + 'heading_yaw.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'heading_foreground.svg" class="box" alt="" /></div><div class="beaconred box"><img src="' + settings.img_directory + 'heading_beaconred.svg" class="box" alt="" /></div><div class="beacongreen box"><img src="' + settings.img_directory + 'heading_beacongreen.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument heading"><div class="heading box"><img src="' + settings.img_directory + 'heading_yaw.svg" class="box" alt="" /></div><div class="beacontwo box"><img src="' + settings.img_directory + 'heading_beacontwo.svg" class="box" alt="" /></div><div class="beaconone box"><img src="' + settings.img_directory + 'heading_beaconone.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'heading_foreground.svg" class="box" alt="" /></div></div>');
 					_setHeading(settings.heading);
-					_setBeaconGreen(settings.beacongreen, settings.beacongreenshow);
-					_setBeaconRed(settings.beaconred, settings.beaconredshow);
+					_setBeaconTwo(settings.beacontwo, settings.beacontwoshow);
+					_setBeaconOne(settings.beaconone, settings.beacononeshow);
 				break;
 				case 'variometer':
 					$(this).html('<div class="instrument vario"><img src="' + settings.img_directory + 'vertical_foreground.svg" class="box" alt="" /><div class="vario box"><img src="' + settings.img_directory + 'vertical_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
@@ -60,10 +59,9 @@
 					_setAirSpeed(settings.airspeed);
 				break
 				case 'altimeter':
-					$(this).html('<div class="instrument altimeter"><div class="pressure2 box"><img src="' + settings.img_directory + 'altitude_pressure2.svg" class="box" alt="" /></div><div class="pressure box"><img src="' + settings.img_directory + 'altitude_pressure.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'altitude_foreground.svg" class="box" alt="" /><div class="circlehand box"><img src="' + settings.img_directory + 'altitude_circular_hand.svg" class="box" alt="" /></div><div class="handSmall box"><img src="' + settings.img_directory + 'altitude_hour_hand.svg" class="box" alt="" /></div><div class="hand box"><img src="' + settings.img_directory + 'generic_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
+					$(this).html('<div class="instrument altimeter"><div class="pressureinhg box"><img src="' + settings.img_directory + 'altitude_pressure_inhg.svg" class="box" alt="" /></div><div class="pressurembar box"><img src="' + settings.img_directory + 'altitude_pressure_mbar.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'altitude_foreground.svg" class="box" alt="" /><div class="circlehand box"><img src="' + settings.img_directory + 'altitude_circular_hand.svg" class="box" alt="" /></div><div class="handSmall box"><img src="' + settings.img_directory + 'altitude_hour_hand.svg" class="box" alt="" /></div><div class="hand box"><img src="' + settings.img_directory + 'generic_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
 					_setAltitude(settings.altitude);
 					_setPressure(settings.pressure);
-					_setPressure2(settings.pressure2);
 				break;
 				default:
 					$(this).html('<div class="instrument attitude"><div class="roll box"><img src="' + settings.img_directory + 'horizon_back.svg" class="box" alt="" /><div class="pitch box"><img src="' + settings.img_directory + 'horizon_ball.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'horizon_circle.svg" class="box" alt="" /></div><div class="mechanics box"><img src="' + settings.img_directory + 'horizon_foreground.svg" class="box" alt="" /></div></div>');
@@ -96,21 +94,21 @@
 			});	
 		}
 
-		function _setBeaconRed(heading, visible){
+		function _setBeaconOne(heading, visible){
 			if (visible) placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beaconred').show().css('transform', 'rotate(' + heading + 'deg)');
+				$(this).find('div.instrument.heading div.beaconone').show().css('transform', 'rotate(' + heading + 'deg)');
 			});	
 			else placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beaconred').hide();
+				$(this).find('div.instrument.heading div.beaconone').hide();
 			});
 		}		
 
-		function _setBeaconGreen(heading, visible){
+		function _setBeaconTwo(heading, visible){
 			if (visible) placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beacongreen').show().css('transform', 'rotate(' + heading + 'deg)');
+				$(this).find('div.instrument.heading div.beacontwo').show().css('transform', 'rotate(' + heading + 'deg)');
 			});	
 			else placeholder.each(function(){
-				$(this).find('div.instrument.heading div.beacongreen').hide();
+				$(this).find('div.instrument.heading div.beacontwo').hide();
 			});
 		}				
 
@@ -127,7 +125,6 @@
 
 				//$(this).find('div.instrument.turn_coordinator div.turn').css('background-color', 'rgb(12, 132, 237)');		// testing blue
 				//$(this).find('div.instrument.turn_coordinator div.turn').css('background-image', 'url(file:///D:/hp/sager/CDOTedx/jQuery-Flight-Indicators-master/pathAnimator-master/img/ballbg.fw.png)');
-
 		}
 
 		function _setVario(vario){
@@ -162,19 +159,19 @@
 		}
 
 		function _setPressure(pressure){
-			pressure = (1000 - pressure) * 2;
-			placeholder.each(function(){
-				$(this).find('div.instrument.altimeter div.pressure').css('transform', 'rotate(' + pressure + 'deg)');
-			});	
-		}
 
-		// WIP
-		function _setPressure2(pressure){
-			pressure = (30 - pressure) * 60;
+			pressure1 = (1000 - pressure) * 2;
 			placeholder.each(function(){
-				$(this).find('div.instrument.altimeter div.pressure2').css('transform', 'rotate(' + pressure + 'deg)');
+				$(this).find('div.instrument.altimeter div.pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
 			});	
-		}		
+
+
+			pressure2 = (30 - pressure * 0.0295300) * 60;
+			placeholder.each(function(){
+				$(this).find('div.instrument.altimeter div.pressureinhg').css('transform', 'rotate(' + pressure2 + 'deg)');
+			});				
+
+		}
 
 		function _resize(size){
 			placeholder.each(function(){
@@ -198,14 +195,13 @@
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
 		this.setHeading = function(heading){_setHeading(heading);}
-		this.setBeaconRed = function(heading, visible){_setBeaconRed(heading, visible);}
-		this.setBeaconGreen = function(heading, visible){_setBeaconGreen(heading, visible);}
+		this.setBeaconOne = function(heading, visible){_setBeaconOne(heading, visible);}
+		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}
 		this.setTurn = function(turn){_setTurn(turn);}
 		this.setVario = function(vario){_setVario(vario);}
 		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}
 		this.setPressure = function(pressure){_setPressure(pressure);}
-		this.setPressure2 = function(pressure){_setPressure2(pressure);}
 		this.resize = function(size){_resize(size);}
 		this.showBox = function(){_showBox();}
 		this.hideBox = function(){_hideBox();}
