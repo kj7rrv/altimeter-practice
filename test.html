@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+
 <body>
+</body>
+
 <style>
 
 path {
@@ -11,16 +14,16 @@ path {
 
 ball {
   fill: steelblue;
-  stroke: #fff;
+  stroke: #fffccc;
   stroke-width: 3px;
 }
 
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="js/d3.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-<script>
+<script type="text/javascript">
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#turncoordinator").append("svg")
     .attr("width", 960)
     .attr("height", 500);
 
@@ -34,7 +37,6 @@ var ball = svg.append("ellipse")
     .attr("ry", 14.089322);
 
 // Potentially horrible performance wise
-
 function transition(percent) {
   if (percent < 0) percent = 0;
   else if (percent > 100) percent = 100;
@@ -48,6 +50,29 @@ function translateAlong(path, percent) {
   };
 }
 
-transition(0);
+// Update at 20Hz
+var increment = 0;
+var turn_coordinator = $.flightIndicator('#turncoordinator', 'turn_coordinator');
+
+function doTurnCoordinator(){
+
+  var myInterval = setInterval(function() {
+
+      turn_coordinator.setTurn(30*Math.sin(increment/10));
+    increment++;
+
+  }, 50);
+
+}
+
+$("#turncoordinatorButton").text("Start");
+
+$("#turncoordinatorButton").on("click", function() {
+  $("#turncoordinatorButton").attr('disabled', true);
+  $("#turncoordinatorButton").text("Playing");
+
+  doTurnCoordinator();
+  
+});
 
 </script>

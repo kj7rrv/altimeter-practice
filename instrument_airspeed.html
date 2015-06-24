@@ -1,39 +1,92 @@
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="utf-8">
-    <!-- Flight Indicators library styles -->
-    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-	
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<meta charset="utf-8">
+<title>Airspeed Indicator</title>
+<link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	
-    <title>Airspeed Indicator</title>
-</head>
-<body>
-    <div class="examples text-center">
-        <div>
-            <span id="airspeed"></span>
-        </div>
-		<div>
-			<button id="airspeedButton" class="btn btn-default" type="submit">Button</button>
-        </div>
-    </div>
+<style>
 
-<!-- Importing jQuery library -->
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+ball {
+  fill: steelblue;
+  stroke: #fffccc;
+  stroke-width: 3px;
+}
+
+</style>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
 <script src="js/jquery.min.js"></script>
-
-<!-- Importing the FlightIndicators library -->
 <script src="js/jquery.flightindicators.js"></script>
+<script src="js/d3.min.js"></script>
 
-<!-- Let start our scripts -->
+<script type="text/javascript">
+
+var svg = d3.select("#turncoordinator").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+var path = svg.append("path")
+    .attr("id", "movepath")
+    .attr("d", "m 117.99978,247.40019 82.33222,10.6068 82.33178,-10.6068");
+
+var ball = svg.append("ellipse")
+    .attr("id", "mover")
+    .attr("rx", 9.7499981)
+    .attr("ry", 14.089322);
+
+// Potentially horrible performance wise
+function transition(percent) {
+  if (percent < 0) percent = 0;
+  else if (percent > 100) percent = 100;
+  ball.transition().duration(0).attrTween("transform", translateAlong(path.node(), percent));
+}
+
+function translateAlong(path, percent) {
+  var l = path.getTotalLength() * percent / 100;
+  return function(d, i, a) {
+    return function(t) { var p = path.getPointAtLength(t * l); return "translate(" + p.x + "," + p.y + ")"; };
+  };
+}
+
+// Update at 20Hz
+var increment = 0;
+var turn_coordinator = $.flightIndicator('#turncoordinator', 'turn_coordinator');
+
+function doTurnCoordinator(){
+
+  var myInterval = setInterval(function() {
+
+      turn_coordinator.setTurn(30*Math.sin(increment/10));
+    increment++;
+
+  }, 50);
+
+}
+
+$("#turncoordinatorButton").text("Start");
+
+$("#turncoordinatorButton").on("click", function() {
+  $("#turncoordinatorButton").attr('disabled', true);
+  $("#turncoordinatorButton").text("Playing");
+
+  doTurnCoordinator();
+  
+});
+
+</script>
+
+<!--Turn coordinator script -->
 <script type="text/javascript">
 
 // Update at 20Hz
@@ -81,6 +134,20 @@ $("#airspeedButton").on("click", function() {
 });
 			
 </script>
+
+</head>
+
+<body>
+
+    <div class="examples text-center">
+        <div>
+            <span id="airspeed"></span>
+        </div>
+		<div>
+			<button id="airspeedButton" class="btn btn-default" type="submit">Button</button>
+        </div>
+    </div>
+
 </body>
 </html>
 

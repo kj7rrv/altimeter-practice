@@ -66,10 +66,6 @@
   inkscape:transform-center-x="-0.46783502"
   inkscape:transform-center-y="267.04948">
 
-  <animateMotion dur="3s" repeatCount="1">
-    <mpath xlink:href="#theMotionPath"/>
-  </animateMotion>
-
 </ellipse>
 
 </svg>
