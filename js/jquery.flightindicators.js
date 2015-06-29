@@ -23,7 +23,7 @@
 			vario: 0,
 			airspeed: 0,
 			altitude: 0,
-			pressure: 1135,
+			pressure: 1117.5038358,
 			showBox : true,
 			img_directory : 'img/'
 		}, options );
@@ -55,11 +55,11 @@
 					_setSlip(settings.slip);
 				break;
 				case 'airspeed':
-					$(this).html('<div class="instrument airspeed"><img src="' + settings.img_directory + 'airspeed_foreground.svg" class="box" alt="" /><div class="speed box"><img src="' + settings.img_directory + 'generic_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
+					$(this).html('<div class="instrument airspeed"><img src="' + settings.img_directory + 'airspeed_foreground.svg" class="box" alt="" /><div class="speed box"><img src="' + settings.img_directory + 'airspeed_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
 					_setAirSpeed(settings.airspeed);
 				break
 				case 'altimeter':
-					$(this).html('<div class="instrument altimeter"><div class="pressureinhg box"><img src="' + settings.img_directory + 'altitude_pressure_inhg.svg" class="box" alt="" /></div><div class="pressurembar box"><img src="' + settings.img_directory + 'altitude_pressure_mbar.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'altitude_foreground.svg" class="box" alt="" /><div class="circlehand box"><img src="' + settings.img_directory + 'altitude_circular_hand.svg" class="box" alt="" /></div><div class="handSmall box"><img src="' + settings.img_directory + 'altitude_hour_hand.svg" class="box" alt="" /></div><div class="hand box"><img src="' + settings.img_directory + 'generic_hand.svg" class="box" alt="" /></div><div class="mechanics box"></div></div>');
+					$(this).html('<div class="instrument altimeter"><div class="pressureinhg box"><img src="' + settings.img_directory + 'altimeter_pressure_inhg.svg" class="box" alt="" /></div><div class="pressurembar box"><img src="' + settings.img_directory + 'altimeter_pressure_mbar.svg" class="box" alt="" /></div><div class="foreground box"><img src="' + settings.img_directory + 'altimeter_foreground.svg" class="box" alt="" /></div><div class="hand10000 box"><img src="' + settings.img_directory + 'altimeter_hand_10000ft.svg" class="box" alt="" /></div><div class="midground box"><img src="' + settings.img_directory + 'altimeter_mid.svg" class="box" alt="" /></div><div class="hand1000 box"><img src="' + settings.img_directory + 'altimeter_hand_1000ft.svg" class="box" alt="" /></div><div class="hand100 box"><img src="' + settings.img_directory + 'altimeter_hand_100ft.svg" class="box" alt="" /></div></div>');
 					_setAltitude(settings.altitude);
 					_setPressure(settings.pressure);
 				break;
@@ -139,7 +139,7 @@
 		function _setAirSpeed(speed){
 			if(speed > constants.airspeed_bound_h){speed = constants.airspeed_bound_h;}
 			else if(speed < constants.airspeed_bound_l){speed = constants.airspeed_bound_l;}
-			speed = 90+speed*2;
+			speed = speed*2;
 			placeholder.each(function(){
 				$(this).find('div.instrument.airspeed div.speed').css('transform', 'rotate(' + speed + 'deg)');
 			});	
@@ -147,29 +147,33 @@
 
 		// WIP
 		function _setAltitude(altitude){
-			//var hand = 90 + altitude%1000 * 360 / 1000;
-			var hand = 90 + altitude / 100 * 360;
-			var handSmall = altitude / 1000 * 360;
-			var handCenter = altitude / 10000 * 360;
+			var hand100 = altitude / 100 * 360;
+			var hand1000 = altitude / 1000 * 360;
+			var hand10000 = altitude / 10000 * 360;
 			placeholder.each(function(){
-				$(this).find('div.instrument.altimeter div.hand').css('transform', 'rotate(' + hand + 'deg)');
-				$(this).find('div.instrument.altimeter div.handSmall').css('transform', 'rotate(' + handSmall + 'deg)');
-				$(this).find('div.instrument.altimeter div.circlehand').css('transform', 'rotate(' + handCenter + 'deg)');
+				$(this).find('div.instrument.altimeter div.hand100').css('transform', 'rotate(' + hand100 + 'deg)');
+				$(this).find('div.instrument.altimeter div.hand1000').css('transform', 'rotate(' + hand1000 + 'deg)');
+				$(this).find('div.instrument.altimeter div.hand10000').css('transform', 'rotate(' + hand10000 + 'deg)');
 			});	
 		}
 
 		function _setPressure(pressure){
 
-			pressure1 = (1000 - pressure) * 2;
-			placeholder.each(function(){
-				$(this).find('div.instrument.altimeter div.pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
-			});	
+			if (pressure >= 925 && pressure <= 1120) {
 
+				// 5 units = 9 degrees
+				pressure1 = (925 - pressure) * 1.8;
+				placeholder.each(function(){
+					$(this).find('div.instrument.altimeter div.pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
+				});	
 
-			pressure2 = (30 - pressure * 0.0295300) * 60;
-			placeholder.each(function(){
-				$(this).find('div.instrument.altimeter div.pressureinhg').css('transform', 'rotate(' + pressure2 + 'deg)');
-			});				
+				// 0.1 units = 6 degrees
+				pressure2 = (pressure * 0.0295300 - 27.1) * 60;
+				placeholder.each(function(){
+					$(this).find('div.instrument.altimeter div.pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
+				});
+
+			}
 
 		}
 
