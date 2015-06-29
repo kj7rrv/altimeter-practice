@@ -6,3 +6,6 @@ set altimeter pressure ranges from
 1049.78 - 31.00
 1050.00 - 31.01
 1117.51	- 33.00
+
+
+--allow-file-access-from-files

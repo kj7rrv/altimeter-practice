@@ -8,7 +8,6 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="Layer_2"
    x="0px"
@@ -18,7 +17,6 @@
    viewBox="0 0 400.667 400.666"
    enable-background="new 0 0 400.667 400.666"
    xml:space="preserve"
-   inkscape:version="0.91 r13725"
    sodipodi:docname="turn_coordinator_ball.svg"><metadata
      id="metadata111"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -86,10 +84,9 @@
        x="-0.11736283"
        id="filter7686"
        style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"><feGaussianBlur
+       ><feGaussianBlur
          id="feGaussianBlur7688"
-         stdDeviation="0.95357281"
-         inkscape:collect="always" /></filter><radialGradient
+         stdDeviation="0.95357281"/></filter><radialGradient
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.58322555,2.1306766,-1.4958975,0.40946884,365.92397,-285.47993)"
        r="10.322141"
@@ -98,9 +95,7 @@
        cy="196.61816"
        cx="214.65051"
        id="radialGradient7573"
-       xlink:href="#linearGradient6179"
-       inkscape:collect="always" /><linearGradient
-       inkscape:collect="always"
+       xlink:href="#linearGradient6179"/><linearGradient
        id="linearGradient6179"><stop
          style="stop-color:#dcdcdc;stop-opacity:1"
          offset="0"
@@ -110,37 +105,7 @@
          style="stop-color:#5a5a5a;stop-opacity:1" /><stop
          style="stop-color:#050505;stop-opacity:1"
          offset="1"
-         id="stop6183" /></linearGradient></defs><sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1142"
-     id="namedview107"
-     showgrid="false"
-     inkscape:zoom="2.0000002"
-     inkscape:cx="210.16672"
-     inkscape:cy="159.97057"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_2"
-     showguides="true"
-     inkscape:guide-bbox="true"><sodipodi:guide
-       position="200.33204,362.05861"
-       orientation="1,0"
-       id="guide4595" /><sodipodi:guide
-       position="361.57032,200.66407"
-       orientation="0,1"
-       id="guide4597" /><sodipodi:guide
-       position="200.58204,361.66408"
-       orientation="0,1"
-       id="guide4601" /></sodipodi:namedview>
+         id="stop6183" /></linearGradient></defs>
 
        <ellipse
      style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter7686)"
@@ -149,8 +114,6 @@
      cy="202.4597"
      rx="9.7499981"
      ry="14.089322"
-     inkscape:transform-center-x="-0.46783502"
-     inkscape:transform-center-y="267.04948"
      transform="matrix(1.1106777,0,0,1.1106777,-42.188066,34.973298)" />
 
      <ellipse
@@ -159,9 +122,7 @@
      cx="200.33084"
      cy="259.84088"
      rx="10.829105"
-     ry="15.648696"
-     inkscape:transform-center-x="-0.46783502"
-     inkscape:transform-center-y="267.04948" /><flowRoot
+     ry="15.648696"/><flowRoot
      xml:space="preserve"
      id="flowRoot4792"
      style="font-style:normal;font-weight:normal;font-size:15.27181816px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
@@ -172,4 +133,8 @@
          x="44.444794"
          y="335.13394"
          style="font-size:15.27181816px" /></flowRegion><flowPara
-       id="flowPara4798" /></flowRoot></svg>
+       id="flowPara4798" /></flowRoot><path
+     sodipodi:nodetypes="ccc"
+     id="movepath"
+     d="m 280.87557,250.10978 c -11.16829,-7.1e-4 -36.36087,9.37742 -80.53834,9.37742 -44.17748,0 -69.81447,-9.37813 -80.98276,-9.37742"
+     style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff00ff;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></svg>

@@ -7,45 +7,48 @@
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/jquery.svg.css">
 
   <script src="js/jquery-1.11.3.js"></script>
-  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.svg.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/jquery.flightindicators.js"></script>
   <script src="js/d3.min.js"></script>
-
-  <title>Turn Coordinator Indicator</title>
+  
+    <title>Turn Coordinator Indicator</title>
 </head>
 <body>
 
-<div id="turncoordinator">
-  <img id="slipball" src="img//turn_coordinator_ball.svg">
-</div>
+
+
+<div id="turncoordinator"></div>
+
+</body>
+
+<style>
+
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+#ball {
+  fill: #333333;
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+#ball_shadow {
+  fill: black;
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+</style>
 
 <script type="text/javascript">
 
-var path = d3.xml("https://raw.githubusercontent.com/uw-ray/jQuery-Flight-Indicators/master/img/turn_coordinator_ball_path.svg", "image/svg+xml", function(xml) {
-  $('#turncoordinator').append(xml.documentElement);
-});
-
-function ballGoTo(ball, path, percent) {
-  if (percent < 0) percent = 0;
-  else if (percent > 100) percent = 100;
-  var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
-  ball.css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
-}
-
-var p = d3.select("#motionpath");
-var b = d3.select("#slipball");
-
-var increment = 0;
-var right = true;
-
-/*
-
-.append("svg")
+var svg = d3.select("#turncoordinator").append("svg")
     .attr("width", 9600)
     .attr("height", 500);
 
@@ -53,31 +56,37 @@ var path = svg.append("path")
     .attr("id", "movepath")
     .attr("d", "m 117.99978,247.40019 82.33222,10.6068 82.33178,-10.6068");
 
-var ball = svg.append("ellipse")
-    .attr("id", "mover")
-    .attr("rx", 9.7499981)
-    .attr("ry", 14.089322);
+var shadow = svg.append("ellipse")
+    .attr("id", "ball_shadow")
+    //.attr("rx", 9.7499981)
+    //.attr("ry", 14.089322);
+    .attr("rx", 12)
+    .attr("ry", 17);
 
-// Potentially horrible performance wise
-function ballGoTo(percent) {
+var ball = svg.append("ellipse")
+    .attr("id", "ball")
+    .attr("rx", 10.829105)
+    .attr("ry", 15.648696);
+
+function jumpto(percent) {
   if (percent < 0) percent = 0;
   else if (percent > 100) percent = 100;
   var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
-  $('#mover').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
+  $('#ball_shadow').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
+  $('#ball').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
 }
 
+var increment = 0;
+var right = true;
+
 var myInterval = setInterval(function() {
-
-  ballGoTo($("#slipball"), $("#motionpath"), increment);
-
+  jumpto(increment);
   if (increment == 0) right = true;
   if (increment == 100) right = false;
-
   if (right == false) increment--;
   else increment++;
-
 }, 10);
-*/
-</script>
 
-</body>
+jumpto(50);
+
+</script>
