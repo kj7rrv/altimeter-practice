@@ -118,7 +118,13 @@
 			});
 		}
 
-		function _setSlip(slip) {	
+		function _setSlip(slip) {
+
+			if (slip < 0) slip = 0;
+			if (slip > 100) slip = 100;
+
+			
+
 			/*
 			placeholder.each(function(){
 				$(this).find('div.instrument.turn_coordinator div.ball').css('transform', 'rotate('+ slip +'deg)');
@@ -202,6 +208,7 @@
 		this.setBeaconOne = function(heading, visible){_setBeaconOne(heading, visible);}
 		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}
 		this.setTurn = function(turn){_setTurn(turn);}
+		this.setSlip = function(slip){_setSlip(slip);}
 		this.setVario = function(vario){_setVario(vario);}
 		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}

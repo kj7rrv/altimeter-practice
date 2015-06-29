@@ -18,6 +18,8 @@
 </head>
 <body>
 
+<object id="x" data="img/turn_coordinator_ball.svg" type="image/svg+xml"></object>
+
 <div id="turncoordinator"></div>
 
 </body>
@@ -41,7 +43,7 @@ ball {
 <script type="text/javascript">
 
 var svg = d3.select("#turncoordinator").append("svg")
-    .attr("width", 960)
+    .attr("width", 9600)
     .attr("height", 500);
 
 var path = svg.append("path")
@@ -57,14 +59,8 @@ var ball = svg.append("ellipse")
 function jumpto(percent) {
   if (percent < 0) percent = 0;
   else if (percent > 100) percent = 100;
-  ball.transition().duration(0).attrTween("transform", translateAlong(path.node(), percent));
-}
-
-function translateAlong(path, percent) {
-  var l = path.getTotalLength() * percent / 100;
-  return function(d, i, a) {
-    return function(t) { var p = path.getPointAtLength(t * l); return "translate(" + p.x + "," + p.y + ")"; };
-  };
+  var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
+  $('#mover').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
 }
 
 var increment = 0;
@@ -81,5 +77,7 @@ var myInterval = setInterval(function() {
   else increment++;
 
 }, 10);
+
+jumpto(50);
 
 </script>

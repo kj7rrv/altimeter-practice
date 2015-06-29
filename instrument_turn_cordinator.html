@@ -39,6 +39,7 @@ function doTurnCoordinator(){
 	var myInterval = setInterval(function() {
 
     	turn_coordinator.setTurn(30*Math.sin(increment/10));
+    	turn_coordinator.setSlip(increment);
 		increment++;
 
 	}, 50);
