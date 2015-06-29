@@ -7,42 +7,47 @@
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/jquery.svg.css">
 
   <script src="js/jquery-1.11.3.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.svg.min.js"></script>
   <script src="js/jquery.flightindicators.js"></script>
   <script src="js/d3.min.js"></script>
-  
-    <title>Turn Coordinator Indicator</title>
+
+  <title>Turn Coordinator Indicator</title>
 </head>
 <body>
 
-<object id="x" data="img/turn_coordinator_ball.svg" type="image/svg+xml"></object>
-
 <div id="turncoordinator"></div>
-
-</body>
-
-<style>
-
-path {
-  fill: none;
-  stroke: #000;
-  stroke-width: 3px;
-}
-
-ball {
-  fill: steelblue;
-  stroke: #fffccc;
-  stroke-width: 3px;
-}
-
-</style>
 
 <script type="text/javascript">
 
-var svg = d3.select("#turncoordinator").append("svg")
+var ball = d3.xml("https://raw.githubusercontent.com/uw-ray/jQuery-Flight-Indicators/master/img/turn_coordinator_ball.svg", "image/svg+xml", function(xml) {
+  $('#turncoordinator').append(xml.documentElement);
+});
+
+var path = d3.xml("https://raw.githubusercontent.com/uw-ray/jQuery-Flight-Indicators/master/img/turn_coordinator_ball_path.svg", "image/svg+xml", function(xml) {
+  $('#turncoordinator').append(xml.documentElement);
+});
+
+function ballGoTo(ball, path, percent) {
+  if (percent < 0) percent = 0;
+  else if (percent > 100) percent = 100;
+  var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
+  ball.css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
+}
+
+var p = d3.select("#motionpath");
+var b = d3.select("#slipball");
+
+var increment = 0;
+var right = true;
+
+/*
+
+.append("svg")
     .attr("width", 9600)
     .attr("height", 500);
 
@@ -63,12 +68,9 @@ function ballGoTo(percent) {
   $('#mover').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
 }
 
-var increment = 0;
-var right = true;
-
 var myInterval = setInterval(function() {
 
-  ballGoTo(increment);
+  ballGoTo($("#slipball"), $("#motionpath"), increment);
 
   if (increment == 0) right = true;
   if (increment == 100) right = false;
@@ -77,7 +79,7 @@ var myInterval = setInterval(function() {
   else increment++;
 
 }, 10);
-
-jumpto(50);
-
+*/
 </script>
+
+</body>
