@@ -39,9 +39,14 @@ path {
 }
 
 #ball_shadow {
-  fill: black;
+  fill: gray;
   stroke: #000000;
   stroke-width: 1px;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 </style>
@@ -54,7 +59,7 @@ var svg = d3.select("#turncoordinator").append("svg")
 
 var path = svg.append("path")
     .attr("id", "movepath")
-    .attr("d", "m 117.99978,247.40019 82.33222,10.6068 82.33178,-10.6068");
+    .attr("d", "m 280.87557,250.10978 c -11.16829,-7.1e-4 -36.36087,9.37742 -80.53834,9.37742 -44.17748,0 -69.81447,-9.37813 -80.98276,-9.37742");
 
 var shadow = svg.append("ellipse")
     .attr("id", "ball_shadow")
@@ -72,10 +77,11 @@ function jumpto(percent) {
   if (percent < 0) percent = 0;
   else if (percent > 100) percent = 100;
   var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
-  $('#ball_shadow').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
   $('#ball').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
+  $('#ball_shadow').css('transform', 'translate(' + pos.x + 'px, ' + pos.y + 'px)');
 }
 
+/*
 var increment = 0;
 var right = true;
 
@@ -87,6 +93,8 @@ var myInterval = setInterval(function() {
   else increment++;
 }, 10);
 
-jumpto(50);
 
+*/
+
+jumpto(50);
 </script>
