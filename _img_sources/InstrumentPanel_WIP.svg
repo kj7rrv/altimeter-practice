@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="769.4873"
-     inkscape:cy="568.58895"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="187.74229"
+     inkscape:cy="541.17181"
      inkscape:document-units="px"
-     inkscape:current-layer="altimeterLeftHand"
+     inkscape:current-layer="altimeterRightHand"
      showgrid="false"
      units="px"
      showguides="true"
@@ -11237,7 +11237,7 @@
        inkscape:groupmode="layer"
        id="altimeterHatch"
        inkscape:label="Dial - Altimeter - Bg"
-       style="display:none">
+       style="display:inline">
       <g
          id="g13087">
         <path
@@ -11710,7 +11710,7 @@
        inkscape:groupmode="layer"
        id="altimeterCircleHand"
        inkscape:label="Dial - Altimeter - Hand 10000ft"
-       style="display:none"
+       style="display:inline"
        inkscape:transform-center-y="-3.1640626">
       <g
          id="g6367"
@@ -11735,7 +11735,7 @@
        inkscape:groupmode="layer"
        id="layer6"
        inkscape:label="Dial - Altimeter - Mid"
-       style="display:none">
+       style="display:inline">
       <g
          id="g9067">
         <circle
@@ -11981,7 +11981,7 @@
        inkscape:groupmode="layer"
        id="altimeterShortHand"
        inkscape:label="Dial - Altimeter - Hand 1000ft"
-       style="display:none">
+       style="display:inline">
       <path
          inkscape:connector-curvature="0"
          d=""
@@ -12030,7 +12030,7 @@
        inkscape:groupmode="layer"
        id="altimeterLongHand"
        inkscape:label="Dial - Altimeter - Hand 100ft"
-       style="display:none">
+       style="display:inline">
       <g
          id="g8068"
          inkscape:transform-center-x="-8.2447079e-05"

@@ -23,7 +23,7 @@
 			vario: 0,
 			airspeed: 0,
 			altitude: 0,
-			pressure: 1117.5038358,
+			pressure: 1000,
 			showBox : true,
 			img_directory : 'img/'
 		}, options );
@@ -119,12 +119,12 @@
 		}
 
 		function _setSlip(slip) {	
+			/*
 			placeholder.each(function(){
 				$(this).find('div.instrument.turn_coordinator div.ball').css('transform', 'rotate('+ slip +'deg)');
 			});
+			*/
 
-				//$(this).find('div.instrument.turn_coordinator div.turn').css('background-color', 'rgb(12, 132, 237)');		// testing blue
-				//$(this).find('div.instrument.turn_coordinator div.turn').css('background-image', 'url(file:///D:/hp/sager/CDOTedx/jQuery-Flight-Indicators-master/pathAnimator-master/img/ballbg.fw.png)');
 		}
 
 		function _setVario(vario){
