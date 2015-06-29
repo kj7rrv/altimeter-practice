@@ -123,7 +123,7 @@
 			if (slip < 0) slip = 0;
 			if (slip > 100) slip = 100;
 
-			
+			console.log(slip);
 
 			/*
 			placeholder.each(function(){

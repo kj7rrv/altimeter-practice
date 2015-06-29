@@ -56,7 +56,7 @@ var ball = svg.append("ellipse")
     .attr("ry", 14.089322);
 
 // Potentially horrible performance wise
-function jumpto(percent) {
+function ballGoTo(percent) {
   if (percent < 0) percent = 0;
   else if (percent > 100) percent = 100;
   var pos = path.node().getPointAtLength(path.node().getTotalLength() * percent / 100);
@@ -68,7 +68,7 @@ var right = true;
 
 var myInterval = setInterval(function() {
 
-  jumpto(increment);
+  ballGoTo(increment);
 
   if (increment == 0) right = true;
   if (increment == 100) right = false;
