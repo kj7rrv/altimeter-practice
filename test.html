@@ -20,13 +20,11 @@
 </head>
 <body>
 
-<div id="turncoordinator"></div>
+<div id="turncoordinator">
+  <img id="slipball" src="img//turn_coordinator_ball.svg">
+</div>
 
 <script type="text/javascript">
-
-var ball = d3.xml("https://raw.githubusercontent.com/uw-ray/jQuery-Flight-Indicators/master/img/turn_coordinator_ball.svg", "image/svg+xml", function(xml) {
-  $('#turncoordinator').append(xml.documentElement);
-});
 
 var path = d3.xml("https://raw.githubusercontent.com/uw-ray/jQuery-Flight-Indicators/master/img/turn_coordinator_ball_path.svg", "image/svg+xml", function(xml) {
   $('#turncoordinator').append(xml.documentElement);
