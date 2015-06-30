@@ -46,7 +46,7 @@ function doAltimeter(){
 
 		// Altimeter update
 		altimeter.setAltitude(3*increment);
-		altimeter.setPressure(1000+3*Math.sin(increment/50));
+		altimeter.setPressure(30+3*Math.sin(increment/50)/10);
 		increment++;
 		
 		if(increment == 5000){

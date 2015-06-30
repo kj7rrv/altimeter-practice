@@ -23,7 +23,7 @@
 			vario: 0,
 			airspeed: 0,
 			altitude: 0,
-			pressure: 1000,
+			pressure: 30,
 			showBox : true,
 			img_directory : 'img/'
 		}, options );
@@ -151,7 +151,6 @@
 			});	
 		}
 
-		// WIP
 		function _setAltitude(altitude){
 			var hand100 = altitude / 100 * 360;
 			var hand1000 = altitude / 1000 * 360;
@@ -163,8 +162,28 @@
 			});	
 		}
 
+
 		function _setPressure(pressure){
 
+			// Code for inHg
+			if (pressure >= 27.1 && pressure <= 33) {
+
+				// 5 units = 9 degrees
+				pressure1 = (925 - 33.8639 * pressure) * 1.8;
+				placeholder.each(function(){
+					$(this).find('div.instrument.altimeter div.pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
+				});	
+
+				// 0.1 units = 6 degrees
+				pressure2 = (pressure - 27.1) * 60;
+				placeholder.each(function(){
+					$(this).find('div.instrument.altimeter div.pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
+				});
+
+			}
+
+			// Code for milibars
+			/*
 			if (pressure >= 925 && pressure <= 1120) {
 
 				// 5 units = 9 degrees
@@ -180,6 +199,7 @@
 				});
 
 			}
+			*/
 
 		}
 
