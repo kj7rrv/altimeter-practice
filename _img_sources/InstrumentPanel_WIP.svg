@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="665.134"
-     inkscape:cy="615.473"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="461.36638"
+     inkscape:cy="178.44143"
      inkscape:document-units="px"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer9"
      showgrid="false"
      units="px"
      showguides="true"
@@ -243,11 +243,11 @@
        inkscape:collect="always"
        id="linearGradient8111">
       <stop
-         style="stop-color:#282828;stop-opacity:1"
+         style="stop-color:#232323;stop-opacity:1"
          offset="0"
          id="stop8113" />
       <stop
-         style="stop-color:#1e1e1e;stop-opacity:1"
+         style="stop-color:#191919;stop-opacity:1"
          offset="1"
          id="stop8115" />
     </linearGradient>
@@ -3577,6 +3577,12 @@
              r="7.5337067" />
         </g>
       </g>
+      <circle
+         style="fill:#ff00ff;fill-opacity:1;stroke:#ff00ff;stroke-width:0.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path6561"
+         cx="438.7717"
+         cy="259.6405"
+         r="1.4614801" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -4209,6 +4215,12 @@
            cy="259.6405"
            r="1.8340211" />
       </g>
+      <circle
+         style="fill:#ff00ff;fill-opacity:1;stroke:#ff00ff;stroke-width:0.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path6569"
+         cx="284.10468"
+         cy="259.6405"
+         r="0.68495965" />
     </g>
     <g
        transform="matrix(1.9999996,0,0,1.9999996,-88.216201,91.300099)"
@@ -12322,6 +12334,12 @@
              inkscape:connector-curvature="0" />
         </g>
       </g>
+      <circle
+         style="fill:#ff00ff;fill-opacity:1;stroke:#ff00ff;stroke-width:0.40000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path6559"
+         cx="837.32422"
+         cy="-186.15297"
+         r="2.5280237" />
     </g>
     <g
        transform="translate(-47.997196,45.99998)"
@@ -14097,6 +14115,12 @@
              sodipodi:nodetypes="scccccs" />
         </g>
       </g>
+      <circle
+         style="fill:#ff00ff;fill-opacity:1;stroke:#ff00ff;stroke-width:0.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path6535"
+         cx="129.28613"
+         cy="92.273476"
+         r="1.5093725" />
     </g>
     <g
        style="display:inline"

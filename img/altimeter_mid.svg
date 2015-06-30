@@ -102,10 +102,10 @@
        gradientUnits="userSpaceOnUse" /><linearGradient
        inkscape:collect="always"
        id="linearGradient8111-8"><stop
-         style="stop-color:#282828;stop-opacity:1"
+         style="stop-color:#232323;stop-opacity:1"
          offset="0"
          id="stop8113-8" /><stop
-         style="stop-color:#1e1e1e;stop-opacity:1"
+         style="stop-color:#191919;stop-opacity:1"
          offset="1"
          id="stop8115-2" /></linearGradient></defs><sodipodi:namedview
      pagecolor="#ffffff"
@@ -120,9 +120,9 @@
      inkscape:window-height="1027"
      id="namedview107"
      showgrid="false"
-     inkscape:zoom="2.0000002"
-     inkscape:cx="53.426949"
-     inkscape:cy="228.90903"
+     inkscape:zoom="4.0000004"
+     inkscape:cx="158.43337"
+     inkscape:cy="225.36019"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
