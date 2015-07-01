@@ -7,8 +7,9 @@
 */
 (function($) {
 	function FlightIndicator( placeholder, type, options ) {
-		// Initial configuration
-		var attitude = this;
+
+		var built = true;
+
 		var settings = $.extend({
 			size : 200,
 			roll : 0,
@@ -75,10 +76,12 @@
 				break;
 
 				default:
+					built = false;
 					console.log("No instrument built.");
+
 			}
 			$(this).find('div.instrument').css({height : settings.size, width : settings.size});
-			$(this).find('div.instrument img.box.background').toggle(settings.showBox);
+			$(this).find('div.instrument .indicator_background').toggle(settings.showBox);
 		});
 
 		function _setAirSpeed(speed){
@@ -217,33 +220,33 @@
 
 		function _showBox(){
 			placeholder.each(function(){
-				$(this).find('img.box.background').show();
+				$(this).find('.indicator_background').show();
 			});
 		}
 
 		function _hideBox(){
 			placeholder.each(function(){
-				$(this).find('img.box.background').hide();
+				$(this).find('.indicator_background').hide();
 			});
 		}
 
 		// Public methods
+		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
-		this.setHeading = function(heading){_setHeading(heading);}
-		this.setBeaconOne = function(heading, visible){_setBeaconOne(heading, visible);}
-		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}
-		this.setTurn = function(turn){_setTurn(turn);}
-		this.setSlip = function(slip){_setSlip(slip);}
-		this.setVario = function(vario){_setVario(vario);}
-		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}
 		this.setPressure = function(pressure){_setPressure(pressure);}
+		this.setTurn = function(turn){_setTurn(turn);}
+		this.setSlip = function(slip){_setSlip(slip);}
+		this.setHeading = function(heading){_setHeading(heading);}
+		this.setBeaconOne = function(heading, visible){_setBeaconOne(heading, visible);}
+		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}		
+		this.setVario = function(vario){_setVario(vario);}
 		this.resize = function(size){_resize(size);}
 		this.showBox = function(){_showBox();}
 		this.hideBox = function(){_hideBox();}
 
-		return attitude;
+		return built;
 	};
 
 	// Extension to jQuery
