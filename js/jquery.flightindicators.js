@@ -213,7 +213,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 			else placeholder.each(function(){
 				$(this).find('div.instrument.heading div.heading_beacon_2').hide();
 			});
-		}				
+		}
 
 		// Variometer - Set vertical speed
 		function _setVario(vario){
@@ -256,7 +256,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 		this.setSlip = function(slip){_setSlip(slip);}
 		this.setHeading = function(heading){_setHeading(heading);}
 		this.setBeaconOne = function(heading, visible){_setBeaconOne(heading, visible);}
-		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}		
+		this.setBeaconTwo = function(heading, visible){_setBeaconTwo(heading, visible);}
 		this.setVario = function(vario){_setVario(vario);}
 		this.resize = function(size){_resize(size);}
 		this.toggleBox = function(toggle){_toggleBox(toggle);}

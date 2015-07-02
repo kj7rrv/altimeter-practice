@@ -9,55 +9,68 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <!-- Syntax coloration -->
-    <link rel="stylesheet" type="text/css" href="_examples_data/prism/prism.css" />
-    <!-- This page style -->
-    <link rel="stylesheet" type="text/css" href="_examples_data/style.css" />
-    <!-- Flight Indicators library styles -->
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-    <title>jQuery Flight Indicators Plugin</title>
+
+    <title>jQuery Flight Indicators Extended Dashboard</title>
+
+    <style>
+
+        .instrument_dashboard {
+            z-index: 0;
+            background-color: #444547;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 <body>
-<div class="container">
-    <div class="examples">
+<div class="instrument_dashboard">
+        
+    <div class="instruments">
         <div>
             <span id="airspeed"></span>
             <span id="attitude"></span>
             <span id="altimeter"></span>            
-        </div><div>
+        </div>
+        <div>
             <span id="turn_coordinator"></span>
             <span id="heading"></span>
             <span id="variometer"></span>
         </div>
     </div>
-   
+  
 </div>
 
 <footer>
 </footer>
 
-<!-- Syntax color -->
-<script src="_examples_data/prism/prism.js"></script>
-
 <!-- Importing jQuery library -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
 
 <!-- Importing the FlightIndicators library -->
 <script src="js/jquery.flightindicators.js"></script>
 
 <!-- Let start our scripts -->
 <script type="text/javascript">
-// First static example
-var first_attitude = $.flightIndicator('#first_attitude', 'attitude', {size:350, roll:8, pitch:3, showBox : false});
-// Dynamic examples
-var attitude = $.flightIndicator('#attitude', 'attitude', {roll:50, pitch:-20, size:200, showBox : false});
-var heading = $.flightIndicator('#heading', 'heading', {heading:150, showBox: false});
-var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5, showBox: false});
-var airspeed = $.flightIndicator('#airspeed', 'airspeed', {showBox: false});
-var altimeter = $.flightIndicator('#altimeter', 'altimeter', {showBox: false});
-var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', {turn:0, showBox: false});
+
+var settings = {
+    size: 250,
+    showBox: false,
+    showScrews: true
+};
+
+var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
+var attitude = $.flightIndicator('#attitude', 'attitude', settings);
+var altimeter = $.flightIndicator('#altimeter', 'altimeter', settings);
+var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', settings);
+var heading = $.flightIndicator('#heading', 'heading', settings);
+var variometer = $.flightIndicator('#variometer', 'variometer', settings);
+
+$(".instrument_dashboard").css({"width": settings.size * 3.2});
 
 // Update at 20Hz
+
 var increment = 0;
 setInterval(function() {
     // Airspeed update
@@ -69,17 +82,21 @@ setInterval(function() {
 
     // Altimeter update
     altimeter.setAltitude(10*increment);
-    altimeter.setPressure(1000+3*Math.sin(increment/50));
+    altimeter.setPressure(30+3*Math.sin(increment/50)/10);
     increment++;
     
     // TC update - note that the TC appears opposite the angle of the attitude indicator, as it mirrors the actual wing up/down position
     turn_coordinator.setTurn((30*Math.sin(increment/10))*-1);
+    turn_coordinator.setSlip(0);
 
     // Heading update
     heading.setHeading(increment);
+    heading.setBeaconOne(increment * 0.5, true);
+    heading.setBeaconTwo(-increment * 0.75, true);
     
     // Vario update
     variometer.setVario(2*Math.sin(increment/10));
+
 }, 50);
 </script>
 </body>
