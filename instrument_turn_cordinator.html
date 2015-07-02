@@ -14,28 +14,76 @@
 	<script src="js/d3.min.js"></script>
 	
     <title>Turn Coordinator Indicator</title>
+
+    <style>
+
+		path {
+			fill: none;
+			stroke: #000;
+			stroke-width: 0px;
+		}
+
+    </style>
+
 </head>
 
 <body>
     <div class="examples text-center">
         <div>
             <span id="turncoordinator"></span>
+            <span id="test"></span>
         </div>
 		<div>
 			<button id="turncoordinatorButton" class="btn btn-default" type="submit">Button</button>
         </div>
     </div>
 
+
 <!-- Let start our scripts -->
 <script type="text/javascript">
 
+function setSlipPosition(percent) {
+
+	var p = $("#move_path")[0];
+
+	var s = $("body").find('div.instrument.turn').width() / 400;
+	
+	var l = p.getTotalLength();
+
+
+	console.log(l);
+
+	if (percent < 0) percent = 0;
+	else if (percent > 100) percent = 100;
+	var pos = p.getPointAtLength(l * percent / 100);
+	$('.turn_ball').css('transform', 'translate(' + (pos.x - 200) * s + 'px, ' + (pos.y - 260) * s + 'px)');
+}
+
 // Update at 20Hz
 var increment = 0;
+var ball_increment = 0;
+var ball_right = true;
 var turn_coordinator = $.flightIndicator('#turncoordinator', 'turn_coordinator');
+
+
+// Load TC Path
+d3.xml("img/turn_ball_path.svg", "image/svg+xml", function(xml) {
+	//document.getElementsByClassName("turn_ball_path")[0].appendChild(xml.documentElement);
+	// make sure turn_ball_path.svg contains the line class="box" in svg attributes
+	$(".turn_ball_path").append(xml.documentElement);
+});
+
+turn_coordinator.resize(400);
 
 function doTurnCoordinator(){
 
 	var myInterval = setInterval(function() {
+
+		setSlipPosition(ball_increment);
+		if (ball_increment <= 0) ball_right = true;
+		if (ball_increment >= 100) ball_right = false;
+		if (ball_right == false) ball_increment -= 3;
+		else ball_increment += 3;
 
     	turn_coordinator.setTurn(30*Math.sin(increment/10));
     	turn_coordinator.setSlip(increment);
@@ -54,6 +102,8 @@ $("#turncoordinatorButton").on("click", function() {
 	doTurnCoordinator();
 	
 });
+
+
 			
 </script>
 

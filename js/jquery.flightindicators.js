@@ -13,7 +13,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 		var built = true;
 
 		var settings = $.extend({
-			size : 200,
+			size : 400,
 			roll : 0,
 			pitch : 0,
 			turn : 0,
@@ -63,7 +63,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 				break;
 
 				case 'turn_coordinator':
-					$(this).html('<div class="instrument turn"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="turn_markings_1 box"><img src="' + settings.img_directory + 'turn_markings_1.svg" class="box" alt="" /></div><div class="turn_ball box"><img src="' + settings.img_directory + 'turn_ball.svg" class="box" alt="" /></div><div class="turn_airplane box"><img src="' + settings.img_directory + 'turn_airplane.svg" class="box" alt="" /></div><div class="turn_markings_2 box"><img src="' + settings.img_directory + 'turn_markings_2.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument turn"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="turn_markings_1 box"><img src="' + settings.img_directory + 'turn_markings_1.svg" class="box" alt="" /></div><div class="turn_ball_path box"></div><div class="turn_ball box"><img src="' + settings.img_directory + 'turn_ball.svg" class="box" alt="" /></div><div class="turn_airplane box"><img src="' + settings.img_directory + 'turn_airplane.svg" class="box" alt="" /></div><div class="turn_markings_2 box"><img src="' + settings.img_directory + 'turn_markings_2.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
 					_setTurn(settings.turn);
 					_setSlip(settings.slip);
 				break;
@@ -178,8 +178,6 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 			if (slip < 0) slip = 0;
 			if (slip > 100) slip = 100;
 
-			console.log(slip);
-
 			/*
 			placeholder.each(function(){
 				$(this).find('div.instrument.turn_coordinator div.ball').css('transform', 'rotate('+ slip +'deg)');
@@ -227,8 +225,9 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 
 		// Set size of instrument
 		function _resize(size){
+			var sz = (size < 100) ? sz = 100 : sz = size;
 			placeholder.each(function(){
-				$(this).find('div.instrument').css({height : size, width : size});
+				$(this).find('div.instrument').css({height : sz, width : sz});
 			});
 		}
 
