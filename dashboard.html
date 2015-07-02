@@ -51,6 +51,8 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 <!-- Importing the FlightIndicators library -->
 <script src="js/jquery.flightindicators.js"></script>
 
+<script src="js/d3.min.js"></script>
+
 <!-- Let start our scripts -->
 <script type="text/javascript">
 
@@ -69,9 +71,10 @@ var variometer = $.flightIndicator('#variometer', 'variometer', settings);
 
 $(".instrument_dashboard").css({"width": settings.size * 3.2});
 
-// Update at 20Hz
-
 var increment = 0;
+var ball_increment = 0.5;
+var ball_right = true;
+
 setInterval(function() {
     // Airspeed update
     airspeed.setAirSpeed(80+80*Math.sin(increment/10));
@@ -87,7 +90,11 @@ setInterval(function() {
     
     // TC update - note that the TC appears opposite the angle of the attitude indicator, as it mirrors the actual wing up/down position
     turn_coordinator.setTurn((30*Math.sin(increment/10))*-1);
-    turn_coordinator.setSlip(0);
+    turn_coordinator.setSlip(ball_increment);
+    if (ball_increment <= 0) ball_right = true;
+    if (ball_increment >= 1) ball_right = false;
+    if (ball_right == false) ball_increment -= 0.03;
+    else ball_increment += 0.03;
 
     // Heading update
     heading.setHeading(increment);

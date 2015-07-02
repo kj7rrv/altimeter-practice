@@ -1,11 +1,5 @@
-set altimeter pressure ranges from 
-
- 917.71	- 27.10
- 945.00 - 27.91
- 948.19 - 28.00
-1049.78 - 31.00
-1050.00 - 31.01
-1117.51	- 33.00
-
-
---allow-file-access-from-files
+- load a background image for the dashboard div
+- finish up dashboard
+- in _loadBallPath make more optimal jQuery work
+- "sanitize" the code
+- rewrite documentation
