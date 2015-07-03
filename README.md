@@ -1,18 +1,19 @@
-Skyhawk Flight Instruments jQuery Plugin
+This fork is modelled after a Cessna 172 dashboard. WIP for now.
+
+
+
+Flight Indicators jQuery plugin [![GitHub version](https://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators.svg)](http://badge.fury.io/gh/sebmatton%2FjQuery-Flight-Indicators) 
 ===================
 
-The Skyhawk Flight Instrument plugin is a fork of the excellent jQuery Flight Indicators Plugin (https://github.com/sebmatton/jQuery-Flight-Indicators), with several additions and updated graphics. The instruments are modelled after those typically found in a Cessna 172 Skyhawk aircraft.
-
-This plugin allows you to display high quality flight indicators using HTML, CSS3, jQuery and SVG images. The methods make customization and real time implementation really easy. Further, since all the images are vector svg you can resize the indicators to your application without any quality loss!
+The Flight Indicators Plugin allows you to display high quality flight indicators using html, css3, jQuery and SVG images. The methods make customization and real time implementation really easy. Further, since all the images are vector svg you can resize the indicators to your application without any quality loss ! 
 
 Currently supported indicators are :
 
-* Air Speed
-* Attitude
-* Altimeter
-* Turn Coordinator
+* Attitude (artificial horizon)
 * Heading 
-* Vertical Speed
+* Vertical speed
+* Air speed
+* Altimeter
 
 Example & Demo
 -------------------
