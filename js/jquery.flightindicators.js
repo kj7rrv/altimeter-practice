@@ -63,7 +63,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 				break;
 
 				case 'turn_coordinator':
-					$(this).html('<div class="instrument turn"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="turn_markings_1 box"><img src="' + settings.img_directory + 'turn_markings_1.svg" class="box" alt="" /></div><div class="turn_ball_path box"></div><div class="turn_ball box"><img src="' + settings.img_directory + 'turn_ball.svg" class="box" alt="" /></div><div class="turn_airplane box"><img src="' + settings.img_directory + 'turn_airplane.svg" class="box" alt="" /></div><div class="turn_markings_2 box"><img src="' + settings.img_directory + 'turn_markings_2.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument turn"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="turn_markings_1 box"><img src="' + settings.img_directory + 'turn_markings_1.svg" class="box" alt="" /></div><div class="turn_ball_path box" hidden></div><div class="turn_ball box"><img src="' + settings.img_directory + 'turn_ball.svg" class="box" alt="" /></div><div class="turn_airplane box"><img src="' + settings.img_directory + 'turn_airplane.svg" class="box" alt="" /></div><div class="turn_markings_2 box"><img src="' + settings.img_directory + 'turn_markings_2.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
 					_loadBallPath();
 					_setTurn(settings.turn);
 					_setSlip(settings.slip);
@@ -169,12 +169,29 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 		// Turn Coordinator - Load SVG path along which the slip/skid ball moves
 		function _loadBallPath() {
 			if (typeof(d3) != 'undefined') {
-				placeholder.each(function(){
-					d3.xml("img/turn_ball_path.svg", "image/svg+xml", function(xml) {
-						$(".turn_ball_path").append(xml.documentElement).hide();
-						//$(this).find('div.instrument.turn div.turn_ball_path').append(xml.documentElement).hide();
+				
+				// If running directly from the file, this will fail in Chrome due to security reasons
+				try {
+					placeholder.each(function(){
+						d3.xml("img/turn_ball_path.svg", "image/svg+xml", function(xml) {
+							$(".turn_ball_path").append(xml.documentElement);
+							//$(this).find('div.instrument.turn div.turn_ball_path').append(xml.documentElement).hide();
+						});
 					});
-				});
+
+				// Inject SVG path via JS if the code above doesn't work
+				} catch (err) {
+					console.log("Unable to load turn_ball_path.svg. Injecting a path instead.");
+					d3.select(".turn_ball_path").append("svg")
+						.attr("width", 400)
+						.attr("height", 400)
+						.attr("class", "box")
+						.append("path")
+							.attr("id", "move_path")
+							// This line must be updated if the path SVG file is altered
+							.attr("d", "m 126.04736,251.79367 c 32.2868,5.88557 51.30081,7.6955 74.28947,7.69341 22.93061,0.002 41.52108,-1.7986 73.61092,-7.64849");
+				}
+
 			}
 		}
 
