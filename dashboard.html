@@ -1,13 +1,16 @@
 <!-- 
-jQuery Flight Indicators Extended plugin
-By Sébastien Matton (seb_matton@hotmail.com), Edward Hanna (edward.hanna@senecacollege.ca) and Raymond Blaga (raymond.blaga@gmail.com)
+jQuery Skyhawk Flight Instruments
+By Edward Hanna (edward.hanna@senecacollege.ca) and Raymond Blaga (raymond.blaga@gmail.com)
+
+Forked from jQuery Flight Indicators by Sébastien Matton (seb_matton@hotmail.com)
+https://github.com/sebmatton/jQuery-Flight-Indicators
 
 Published under GPLv3 License.
+-->
 
-https://github.com/uw-ray/jQuery-Flight-Indicators
-  -->
 <html lang="en" dir="ltr">
 <head>
+
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
 
@@ -23,88 +26,86 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 
     </style>
 
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery.flightindicators.js"></script>    
+
 </head>
+
 <body>
-<div class="instrument_dashboard">
-        
-    <div class="instruments">
-        <div>
-            <span id="airspeed"></span>
-            <span id="attitude"></span>
-            <span id="altimeter"></span>            
+
+    <div class="instrument_dashboard">
+            
+        <div class="instruments">
+            <div>
+                <span id="airspeed"></span>
+                <span id="attitude"></span>
+                <span id="altimeter"></span>            
+            </div>
+            <div>
+                <span id="turn_coordinator"></span>
+                <span id="heading"></span>
+                <span id="variometer"></span>
+            </div>
         </div>
-        <div>
-            <span id="turn_coordinator"></span>
-            <span id="heading"></span>
-            <span id="variometer"></span>
-        </div>
+      
     </div>
-  
-</div>
 
-<footer>
-</footer>
+    <!-- Main JS Script -->
+    <script type="text/javascript">
 
-<!-- Importing jQuery library -->
-<script src="js/jquery-1.11.3.js"></script>
+        var settings = {
+            size: 250,
+            showBox: false,
+            showScrews: true
+        };
 
-<!-- Importing the FlightIndicators library -->
-<script src="js/jquery.flightindicators.js"></script>
+        var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
+        var attitude = $.flightIndicator('#attitude', 'attitude', settings);
+        var altimeter = $.flightIndicator('#altimeter', 'altimeter', settings);
+        var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', settings);
+        var heading = $.flightIndicator('#heading', 'heading', settings);
+        var variometer = $.flightIndicator('#variometer', 'variometer', settings);
 
-<script src="js/d3.min.js"></script>
+        $(".instrument_dashboard").css({"width": settings.size * 3.2});
 
-<!-- Let start our scripts -->
-<script type="text/javascript">
+        var increment = 0;
+        var ball_increment = 0.5;
+        var ball_right = true;
 
-var settings = {
-    size: 250,
-    showBox: false,
-    showScrews: true
-};
+        setInterval(function() {
+            // Airspeed update
+            airspeed.setAirSpeed(80+80*Math.sin(increment/10));
 
-var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
-var attitude = $.flightIndicator('#attitude', 'attitude', settings);
-var altimeter = $.flightIndicator('#altimeter', 'altimeter', settings);
-var turn_coordinator = $.flightIndicator('#turn_coordinator', 'turn_coordinator', settings);
-var heading = $.flightIndicator('#heading', 'heading', settings);
-var variometer = $.flightIndicator('#variometer', 'variometer', settings);
+            // Attitude update
+            attitude.setRoll(30*Math.sin(increment/10));
+            attitude.setPitch(50*Math.sin(increment/20));
 
-$(".instrument_dashboard").css({"width": settings.size * 3.2});
+            // Altimeter update
+            altimeter.setAltitude(10*increment);
+            altimeter.setPressure(30+3*Math.sin(increment/50)/10);
+            increment++;
+            
+            // TC update - note that the TC appears opposite the angle of the attitude indicator, as it mirrors the actual wing up/down position
+            turn_coordinator.setTurn((30*Math.sin(increment/10))*-1);
+            turn_coordinator.setSlip(ball_increment);
+            if (ball_increment <= 0) ball_right = true;
+            if (ball_increment >= 1) ball_right = false;
+            if (ball_right == false) ball_increment -= 0.03;
+            else ball_increment += 0.03;
 
-var increment = 0;
-var ball_increment = 0.5;
-var ball_right = true;
+            // Heading update
+            heading.setHeading(increment);
+            heading.setBeaconOne(increment * 0.5, true);
+            heading.setBeaconTwo(-increment * 0.75, true);
+            
+            // Vario update
+            variometer.setVario(2*Math.sin(increment/10));
 
-setInterval(function() {
-    // Airspeed update
-    airspeed.setAirSpeed(80+80*Math.sin(increment/10));
+        }, 50);
 
-    // Attitude update
-    attitude.setRoll(30*Math.sin(increment/10));
-    attitude.setPitch(50*Math.sin(increment/20));
+    </script>
 
-    // Altimeter update
-    altimeter.setAltitude(10*increment);
-    altimeter.setPressure(30+3*Math.sin(increment/50)/10);
-    increment++;
-    
-    // TC update - note that the TC appears opposite the angle of the attitude indicator, as it mirrors the actual wing up/down position
-    turn_coordinator.setTurn((30*Math.sin(increment/10))*-1);
-    turn_coordinator.setSlip(ball_increment);
-    if (ball_increment <= 0) ball_right = true;
-    if (ball_increment >= 1) ball_right = false;
-    if (ball_right == false) ball_increment -= 0.03;
-    else ball_increment += 0.03;
-
-    // Heading update
-    heading.setHeading(increment);
-    heading.setBeaconOne(increment * 0.5, true);
-    heading.setBeaconTwo(-increment * 0.75, true);
-    
-    // Vario update
-    variometer.setVario(2*Math.sin(increment/10));
-
-}, 50);
-</script>
 </body>
+
 </html>

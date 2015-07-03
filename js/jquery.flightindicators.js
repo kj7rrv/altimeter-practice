@@ -1,10 +1,11 @@
 /* 
-jQuery Flight Indicators Extended plugin
-By Sébastien Matton (seb_matton@hotmail.com), Edward Hanna (edward.hanna@senecacollege.ca) and Raymond Blaga (raymond.blaga@gmail.com)
+jQuery Skyhawk Flight Instruments
+By Edward Hanna (edward.hanna@senecacollege.ca) and Raymond Blaga (raymond.blaga@gmail.com)
+
+Forked from jQuery Flight Indicators by Sébastien Matton (seb_matton@hotmail.com)
+https://github.com/sebmatton/jQuery-Flight-Indicators
 
 Published under GPLv3 License.
-
-https://github.com/uw-ray/jQuery-Flight-Indicators
 */
 (function($) {
 
@@ -14,8 +15,13 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 
 		var settings = $.extend({
 			size : 400,
+			showBox : true,
+			showScrews: true,
+			airspeed: 0,
 			roll : 0,
 			pitch : 0,
+			altitude: 0,
+			pressure: 30,
 			turn : 0,
 			slip: 0,
 			heading: 0,
@@ -24,11 +30,6 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 			beacontwo: 30,
 			beacontwoshow: true,
 			vario: 0,
-			airspeed: 0,
-			altitude: 0,
-			pressure: 30,
-			showBox : true,
-			showScrews: true,
 			img_directory : 'img/'
 			}, options 
 		);
@@ -46,7 +47,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 			switch(type){
 
 				case 'airspeed':
-					$(this).html('<div class="instrument airspeed"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="airspeed_clock"><img src="' + settings.img_directory + 'airspeed_clock.svg" class="box" alt="" /></div><div class="airspeed box"><img src="' + settings.img_directory + 'airspeed_hand.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument airspeed"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="airspeed_markings"><img src="' + settings.img_directory + 'airspeed_markings.svg" class="box" alt="" /></div><div class="airspeed box"><img src="' + settings.img_directory + 'airspeed_hand.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
 					_setAirSpeed(settings.airspeed);
 				break
 
