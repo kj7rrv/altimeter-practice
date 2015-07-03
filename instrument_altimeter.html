@@ -13,24 +13,17 @@ Published under GPLv3 License.
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <!-- Flight Indicators library styles -->
-    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-	
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	
     <title>Altimeter Indicator</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery.flightindicators.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+    <script src="js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
+
 <body>
+
     <div class="examples text-center">
         <div>
             <span id="altimeter"></span>
@@ -40,49 +33,43 @@ Published under GPLv3 License.
         </div>
     </div>
 
-<!-- Importing the FlightIndicators library -->
-<script src="js/jquery.flightindicators.js"></script>
+	<script type="text/javascript">
 
-<!-- Let start our scripts -->
-<script type="text/javascript">
+		var increment = 0;
+		var altimeter = $.flightIndicator('#altimeter', 'altimeter');
 
-// Update at 20Hz
-var increment = 0;
-var altimeter = $.flightIndicator('#altimeter', 'altimeter');
+		function doAltimeter(){
 
-function doAltimeter(){
+			var myInterval = setInterval(function() {
 
-	var myInterval = setInterval(function() {
+				// Altimeter update
+				altimeter.setAltitude(3*increment);
+				altimeter.setPressure(30+3*Math.sin(increment/50)/10);
+				increment++;
+				
+				if(increment == 5000){
+					clearInterval(myInterval);
+					$("#altimiterButton").attr('disabled',false);
+					$("#altimiterButton").text("Start");
+					altimeter.setAltitude(0);
+					altimeter.setPressure(0);
+				}
 
-		// Altimeter update
-		altimeter.setAltitude(3*increment);
-		altimeter.setPressure(30+3*Math.sin(increment/50)/10);
-		increment++;
-		
-		if(increment == 5000){
-			clearInterval(myInterval);
-			$("#altimiterButton").attr('disabled',false);
-			$("#altimiterButton").text("Start");
-			altimeter.setAltitude(0);
-			altimeter.setPressure(0);
+			}, 50);
+
 		}
 
-	}, 50);
+		$("#altimiterButton").text("Start");
+		$("#altimiterButton").on("click", function() {
+			$("#altimiterButton").attr('disabled', true);
+			$("#altimiterButton").text("Playing");
+			doAltimeter();
+		});
+				
+	</script>
 
-}
-
-$("#altimiterButton").text("Start");
-
-$("#altimiterButton").on("click", function() {
-	$("#altimiterButton").attr('disabled', true);
-	$("#altimiterButton").text("Playing");
-
-	doAltimeter();
-	
-});
-			
-</script>
 </body>
+
 </html>
 
 

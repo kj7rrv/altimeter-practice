@@ -13,80 +13,64 @@ Published under GPLv3 License.
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <!-- Flight Indicators library styles -->
-    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-	
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	
     <title>Heading Indicator</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery.flightindicators.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+    <script src="js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
+
 <body>
+
     <div class="examples text-center">
         <div>
             <span id="heading"></span>
         </div>
 		<div>
-		<button id="headingButton" class="btn btn-default" type="submit">Button</button>
+			<button id="headingButton" class="btn btn-default" type="submit">Button</button>
 		</div>
     </div>
 
-<!-- Importing jQuery library -->
-<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
 
-<!-- Importing the FlightIndicators library -->
-<script src="js/jquery.flightindicators.js"></script>
+		var increment = 0;
+		var heading = $.flightIndicator('#heading', 'heading', {heading:150});
 
-<!-- Let start our scripts -->
-<script type="text/javascript">
+		function doHeading(){
 
-// Update at 20Hz
-var increment = 0;
-var heading = $.flightIndicator('#heading', 'heading', {heading:150});
+			var myInterval = setInterval(function() {
 
-function doHeading(){
+				$("#headingButton").text("Playing");
+			    increment++;
+				
+				// Heading update
+			    heading.setHeading(increment);
+			    heading.setBeaconOne(increment * 2, true);
+			    heading.setBeaconTwo(-increment * 3, true);
+				
+				if(increment == 157){
+				$("#headingButton").text("Start");
+				clearInterval(myInterval);
+				$("#headingButton").attr('disabled',false);
+				heading.setHeading(0);
+				}
 
-var myInterval = setInterval(function() {
+			}, 50);
 
-	$("#headingButton").text("Playing");
-    increment++;
-	
-	// Heading update
-    heading.setHeading(increment);
-    heading.setBeaconOne(increment * 2, true);
-    heading.setBeaconTwo(-increment * 3, true);
-	
-	if(increment == 157){
-	$("#headingButton").text("Start");
-	clearInterval(myInterval);
-	$("#headingButton").attr('disabled',false);
-	heading.setHeading(0);
-	}
-
-}, 50);
-
-}
-	
-	$("#headingButton").text("Start");
-
-	$("#headingButton").on("click", function() {
-		$("#headingButton").attr('disabled', true);
-		
-		doHeading();
-		
-	});
+		}
 			
-</script>
+		$("#headingButton").text("Start");
+		$("#headingButton").on("click", function() {
+			$("#headingButton").attr('disabled', true);
+			doHeading();
+		});
+				
+	</script>
+
 </body>
+
 </html>
 
 

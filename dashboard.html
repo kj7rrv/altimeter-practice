@@ -13,26 +13,20 @@ Published under GPLv3 License.
 <html lang="en" dir="ltr">
 
 <head>
-
-    <meta charset="utf-8">
+    <title>Skyhawk Flight Instruments Dashboard</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery.flightindicators.js"></script>
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
-
-    <title>jQuery Flight Indicators Extended Dashboard</title>
-
+    <script src="js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <style>
-
         .instrument_dashboard {
             z-index: 0;
             background-color: #444547;
             text-align: center;
         }
-
     </style>
-
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/jquery.flightindicators.js"></script>    
-
 </head>
 
 <body>
@@ -54,7 +48,6 @@ Published under GPLv3 License.
       
     </div>
 
-    <!-- Main JS Script -->
     <script type="text/javascript">
 
         var settings = {
@@ -63,6 +56,12 @@ Published under GPLv3 License.
             showScrews: true
         };
 
+        $(".instrument_dashboard").css({"width": settings.size * 3.2});
+
+        var increment = 0;
+        var ball_increment = 0.5;
+        var ball_right = true;
+
         var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
         var attitude = $.flightIndicator('#attitude', 'attitude', settings);
         var altimeter = $.flightIndicator('#altimeter', 'altimeter', settings);
@@ -70,13 +69,8 @@ Published under GPLv3 License.
         var heading = $.flightIndicator('#heading', 'heading', settings);
         var variometer = $.flightIndicator('#variometer', 'variometer', settings);
 
-        $(".instrument_dashboard").css({"width": settings.size * 3.2});
-
-        var increment = 0;
-        var ball_increment = 0.5;
-        var ball_right = true;
-
         setInterval(function() {
+
             // Airspeed update
             airspeed.setAirSpeed(80+80*Math.sin(increment/10));
 
