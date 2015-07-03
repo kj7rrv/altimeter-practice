@@ -115,4 +115,4 @@ The project is published under GPLv3 License. See LICENSE file for more informat
 
 Thanks
 ---------
-Thanks to Sébastien Matton and everyone involved in the jQuery Flight Indicators Plugin.
+Thanks to Sébastien Matton and everyone involved in the making of the jQuery Flight Indicators Plugin.
