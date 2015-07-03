@@ -1,12 +1,13 @@
 /* 
-jQuery Skyhawk Flight Instruments
+Skyhawk Flight Instruments (https://github.com/uw-ray/Skyhawk-Flight-Instruments)
 By Edward Hanna (edward.hanna@senecacollege.ca) and Raymond Blaga (raymond.blaga@gmail.com)
 
-Forked from jQuery Flight Indicators by Sébastien Matton (seb_matton@hotmail.com)
-https://github.com/sebmatton/jQuery-Flight-Indicators
+Forked from jQuery Flight Indicators (https://github.com/sebmatton/jQuery-Flight-Indicators)
+By Sébastien Matton (seb_matton@hotmail.com)
 
 Published under GPLv3 License.
 */
+
 (function($) {
 
 	function FlightIndicator( placeholder, type, options ) {
