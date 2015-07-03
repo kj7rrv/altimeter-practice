@@ -1,4 +1,3 @@
 - load a background image for the dashboard div
 - finish up dashboard
-- "sanitize" the code
 - rewrite documentation

@@ -20,18 +20,34 @@ Published under GPLv3 License.
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
     <script src="js/bootstrap.min.js"></script>    
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+
     <style>
-        .instrument_dashboard {
+        .instruments_background {
             z-index: 0;
-            background-color: #444547;
-            text-align: center;
+            width: 1500px;
+            height: auto;
+        }
+        .instruments {
+            /*
+            position: absolute;
+            top: 130px;
+            left: 25px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            */
         }
     </style>
+
 </head>
 
 <body>
 
     <div class="instrument_dashboard">
+
+        <div class="instruments_background">
+            <img src="img/dashboard.svg">
+        </div>
             
         <div class="instruments">
             <div>
@@ -51,12 +67,15 @@ Published under GPLv3 License.
     <script type="text/javascript">
 
         var settings = {
-            size: 250,
+            size: 400,
             showBox: false,
             showScrews: true
         };
 
-        $(".instrument_dashboard").css({"width": settings.size * 3.2});
+        
+        //$(".instruments_background").css({
+          //  "width": settings.size * 3.2
+        //});
 
         var increment = 0;
         var ball_increment = 0.5;
