@@ -14,11 +14,9 @@ Currently supported indicators are :
 * Heading
 * Vertical Speed
 
-Example & Demo
+Examples
 -------------------
-Demo can be found here : [http://sebmatton.github.io/flightindicators/](http://sebmatton.github.io/flightindicators/)
-
-Here are a few examples of currently implemented indicators :
+Here is an example of a full dashboard:
 
 ![demo_example](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/dashboard.png "Indicator examples")
 
