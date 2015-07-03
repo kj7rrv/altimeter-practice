@@ -20,62 +20,35 @@ Published under GPLv3 License.
     <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
     <script src="js/bootstrap.min.js"></script>    
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-
     <style>
-        .instruments_background {
-            z-index: 0;
-            width: 1500px;
-            height: auto;
-        }
-        .instruments {
-            /*
-            position: absolute;
-            top: 130px;
-            left: 25px;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            */
+        body {
+            text-align: center;
         }
     </style>
-
 </head>
 
 <body>
 
-    <div class="instrument_dashboard">
-
-        <div class="instruments_background">
-            <img src="img/dashboard.svg">
+    <div class="instruments">
+        <div>
+            <div class="instrument" id="airspeed"></div>
+            <div class="instrument" id="attitude"></div>
+            <div class="instrument" id="altimeter"></div>            
         </div>
-            
-        <div class="instruments">
-            <div>
-                <span id="airspeed"></span>
-                <span id="attitude"></span>
-                <span id="altimeter"></span>            
-            </div>
-            <div>
-                <span id="turn_coordinator"></span>
-                <span id="heading"></span>
-                <span id="variometer"></span>
-            </div>
+        <div>
+            <div class="instrument" id="turn_coordinator"></div>
+            <div class="instrument" id="heading"></div>
+            <div class="instrument" id="variometer"></div>
         </div>
-      
     </div>
 
     <script type="text/javascript">
 
         var settings = {
-            size: 400,
+            size: 300,
             showBox: false,
             showScrews: true
         };
-
-        
-        //$(".instruments_background").css({
-          //  "width": settings.size * 3.2
-        //});
 
         var increment = 0;
         var ball_increment = 0.5;

@@ -15,6 +15,10 @@ div.instrument {
   overflow: hidden;
 }
 
+.instruments {
+    background-color: #444547;
+}
+
 /* The box containing any element of an indicator */
 div.instrument .box {
   position: absolute;

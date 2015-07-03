@@ -1,3 +1,0 @@
-- load a background image for the dashboard div
-- finish up dashboard
-- rewrite documentation
