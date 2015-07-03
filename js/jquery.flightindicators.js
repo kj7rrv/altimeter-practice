@@ -171,31 +171,35 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 
 		// Turn Coordinator - Load SVG path along which the slip/skid ball moves
 		function _loadBallPath() {
+
 			if (typeof(d3) != 'undefined') {
-				
+
 				// If running directly from the file, this will fail in Chrome due to security reasons
 				try {
 					placeholder.each(function(){
+						var i = this;
 						d3.xml("img/turn_ball_path.svg", "image/svg+xml", function(xml) {
-							$(".turn_ball_path").append(xml.documentElement);
-							//$(this).find('div.instrument.turn div.turn_ball_path').append(xml.documentElement).hide();
+							$(i).find('div.instrument.turn div.turn_ball_path').append(xml.documentElement);
 						});
 					});
 
 				// Inject SVG path via JS if the code above doesn't work
 				} catch (err) {
 					console.log("Unable to load turn_ball_path.svg. Injecting a path instead.");
-					d3.select(".turn_ball_path").append("svg")
-						.attr("width", 400)
-						.attr("height", 400)
-						.attr("class", "box")
-						.append("path")
-							.attr("id", "move_path")
-							// This line must be updated if the path SVG file is altered
-							.attr("d", "m 126.04736,251.79367 c 32.2868,5.88557 51.30081,7.6955 74.28947,7.69341 22.93061,0.002 41.52108,-1.7986 73.61092,-7.64849");
+					placeholder.each(function(){
+						d3.select($(this).find('div.instrument.turn div.turn_ball_path')[0]).append("svg")
+							.attr("width", 400)
+							.attr("height", 400)
+							.attr("class", "box")
+							.append("path")
+								.attr("id", "move_path")
+								// This line must be updated if the path SVG file is altered
+								.attr("d", "m 126.04736,251.79367 c 32.2868,5.88557 51.30081,7.6955 74.28947,7.69341 22.93061,0.002 41.52108,-1.7986 73.61092,-7.64849");
+					});
 				}
 
-			}
+			} else console.log("Unable to find d3js. Will not animate slip ball.");
+
 		}
 
 		// Turn Coordinator - Set turn direction
@@ -208,19 +212,19 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 		// Turn Coordinator - Set slip/skid factor
 		function _setSlip(slip) {
 
-			placeholder.each(function(){
-
-				var path = $("#move_path")[0];
-
-				if (path != undefined) {
-					var scale = $(this).find('div.instrument.turn').width() / 400;
-					if (slip < 0) slip = 0;
-					else if (slip > 1) slip = 1;
-					var pos = path.getPointAtLength(path.getTotalLength() * slip);
-					$(this).find('div.instrument.turn div.turn_ball').css('transform', 'translate(' + (pos.x - 200) * scale + 'px, ' + (pos.y - 260) * scale + 'px)');
-				}
-
-			});
+			// Animate slip ball only if d3js is loaded
+			if (typeof(d3) != 'undefined') {
+				placeholder.each(function(){
+					var path = $("#move_path")[0];
+					if (path != undefined) {
+						var scale = $(this).find('div.instrument.turn').width() / 400;
+						if (slip < 0) slip = 0;
+						else if (slip > 1) slip = 1;
+						var pos = path.getPointAtLength(path.getTotalLength() * slip);
+						$(this).find('div.instrument.turn div.turn_ball').css('transform', 'translate(' + (pos.x - 200) * scale + 'px, ' + (pos.y - 260) * scale + 'px)');
+					}
+				});
+			}
 
 		}
 

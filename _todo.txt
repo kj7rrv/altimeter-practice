@@ -1,5 +1,4 @@
 - load a background image for the dashboard div
 - finish up dashboard
-- in _loadBallPath make more optimal jQuery work
 - "sanitize" the code
 - rewrite documentation
