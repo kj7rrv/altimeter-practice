@@ -131,38 +131,41 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 			});	
 		}
 
-		// Altimeter - Set pressure (inHg by default; separate code for mbar)
-		function _setPressure(pressure){
+		// Altimeter - Set pressure (by default inHg; set milibar to true if you wish to use mbar)
+		function _setPressure(pressure, milibar){
 
-			// Code for inHg
-			if (pressure >= 27.1 && pressure <= 33) {
-				// 5 units = 9 degrees
-				pressure1 = (925 - 33.8639 * pressure) * 1.8;
-				placeholder.each(function(){
-					$(this).find('div.instrument.altimeter div.altimeter_pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
-				});	
-				// 0.1 units = 6 degrees
-				pressure2 = (pressure - 27.1) * 60;
-				placeholder.each(function(){
-					$(this).find('div.instrument.altimeter div.altimeter_pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
-				});
+			if (milibar != true) {
+
+				if (pressure >= 27.1 && pressure <= 33) {
+					// 5 units = 9 degrees
+					pressure1 = (925 - 33.8639 * pressure) * 1.8;
+					placeholder.each(function(){
+						$(this).find('div.instrument.altimeter div.altimeter_pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
+					});	
+					// 0.1 units = 6 degrees
+					pressure2 = (pressure - 27.1) * 60;
+					placeholder.each(function(){
+						$(this).find('div.instrument.altimeter div.altimeter_pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
+					});
+				}
+
+			} else {
+
+				if (pressure >= 925 && pressure <= 1120) {
+					// 5 units = 9 degrees
+					pressure1 = (925 - pressure) * 1.8;
+					placeholder.each(function(){
+						$(this).find('div.instrument.altimeter div.altimeter_pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
+					});	
+					// 0.1 units = 6 degrees
+					pressure2 = (pressure * 0.0295300 - 27.1) * 60;
+					placeholder.each(function(){
+						$(this).find('div.instrument.altimeter div.altimeter_pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
+					});
+				}
+
 			}
 
-			// Code for milibars
-			/*
-			if (pressure >= 925 && pressure <= 1120) {
-				// 5 units = 9 degrees
-				pressure1 = (925 - pressure) * 1.8;
-				placeholder.each(function(){
-					$(this).find('div.instrument.altimeter div.altimeter_pressurembar').css('transform', 'rotate(' + pressure1 + 'deg)');
-				});	
-				// 0.1 units = 6 degrees
-				pressure2 = (pressure * 0.0295300 - 27.1) * 60;
-				placeholder.each(function(){
-					$(this).find('div.instrument.altimeter div.altimeter_pressureinhg').css('transform', 'rotate(' + -pressure2 + 'deg)');
-				});
-			}
-			*/
 
 		}
 
@@ -285,7 +288,7 @@ https://github.com/uw-ray/jQuery-Flight-Indicators
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}
-		this.setPressure = function(pressure){_setPressure(pressure);}
+		this.setPressure = function(pressure, milibar){_setPressure(pressure, milibar);}
 		this.setTurn = function(turn){_setTurn(turn);}
 		this.setSlip = function(slip){_setSlip(slip);}
 		this.setHeading = function(heading){_setHeading(heading);}
