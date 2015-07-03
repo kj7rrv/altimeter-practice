@@ -18,11 +18,11 @@ Examples
 -------------------
 Here is an example of a full dashboard:
 
-![demo_example](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/dashboard.png "Indicator examples")
+(https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/dashboard.png "Indicator examples")
 
 The image below shows a zoomed altimeter. Vector images allows you to keep high quality render with large indicators.
 
-![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/zoom_example.png "High resolution indicator")
+(https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/zoom_example.png "High resolution indicator")
 
 Usage
 -------------------
@@ -37,6 +37,10 @@ To use this plugin you need to import a few files in the head of your HTML file 
 ```
 
 == More work to be done
+
+Note on move_path:
+
+(https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "Move Path Woes")
 
 ### Using the plugin
 Create a `<span>` section to put an indicator in :
