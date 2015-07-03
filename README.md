@@ -108,15 +108,12 @@ indicator.hideBox();				// Make the outer squared box of any instrument invisibl
 
 Author and License
 -----------
-Author : Sébastien Matton (seb_matton@hotmail.com)
+Authors : Raymond Blaga (raymond.blaga@gmail.com), Edward Hanna (edward.hanna@senecacollege.ca), Sébastien Matton (seb_matton@hotmail.com)
 
-jQuery Flight Indicators plugin was developped as part of my Master's Thesis since I needed a realtime interface showing the flight datas about for a quadcopter.
+Skyhawk Flight Instruments was made for use in an online course with the purpose of training future pilots, developed by Seneca College Centre for Development of Open Technology.
 
 The project is published under GPLv3 License. See LICENSE file for more informations
 
-Feel free to take part in this project or/and contact me for any reason :-)
-
-
 Thanks
 ---------
-Thanks to igneosaur for work on which this project was initialy based ([Project on Bitbucket](https://bitbucket.org/igneosaur/attitude-indicator))
+Thanks to Sébastien Matton and everyone involved in the jQuery Flight Indicators Plugin.
