@@ -27,18 +27,16 @@ The image below shows a zoomed altimeter. Vector images allows you to keep high 
 Usage
 -------------------
 ### Initialization
-To use this plugin you need to import the css file in the head of your html file :
+To use this plugin you need to import a few files in the head of your HTML file :
 
 ```html
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/jquery.flightindicators.js"></script>
 <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
 ```
 
-Before the `</body>` tag, include jQuery and this plugin :
-
-```html
-<script src="js/jquery.js"></script>
-<script src="js/jquery.flightindicator.js"></script>
-```
+== More work to be done
 
 ### Using the plugin
 Create a `<span>` section to put an indicator in :
