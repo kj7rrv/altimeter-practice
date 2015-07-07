@@ -98,14 +98,14 @@ attitude.setRoll(30); // Sets the roll to 30 degrees
 Here are the valid methods :
 
 ```js
-indicator.setAirSpeed(speed);					// Sets the speed of an airspeed indicator
+indicator.setAirSpeed(speed);				// Sets the speed of an airspeed indicator
 indicator.setRoll(roll);					// Sets the roll of an attitude indicator
 indicator.setPitch(pitch);					// Sets the pitch of an attitude indicator
-indicator.setAltitude(altitude);		// Sets the altitude of an altimeter indicator
+indicator.setAltitude(altitude);			// Sets the altitude of an altimeter indicator
 indicator.setPressure(pressure, milibars);	// Sets the pressure of an altimeter indicator. If the second parameter is true, the units will be set to milibars.
-indicator.setTurn(turn);			// Set angle of turn of a turn coordinator
-indicator.setSlip(slip);			// Set position of slip ball of a turn coordinator. Range is between 0 and 1, 0.5 being the middle.
-indicator.setHeading(heading);			// Sets the heading of a heading indicator
+indicator.setTurn(turn);					// Set angle of turn of a turn coordinator
+indicator.setSlip(slip);					// Set position of slip ball of a turn coordinator. Range is between 0 and 1, 0.5 being the middle.
+indicator.setHeading(heading);				// Sets the heading of a heading indicator
 indicator.setBeaconOne(heading, visibile)	// Set the angle of the first beacon of a heading indicator and its visibility
 indicator.setBeaconTwo(heading, visibile)	// Set the angle of the second beacon of a heading indicator and its visibility
 indicator.setVario(vario);			// Sets the climb speed of a variometer indicator
