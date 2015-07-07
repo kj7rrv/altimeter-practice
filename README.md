@@ -64,8 +64,8 @@ Initial settings can be modified using the `options` parameter. Here are the val
 ```js
 var options = {
 	size : 200,				// Sets the size in pixels of the indicator (square)
-	showBox : true,			// Sets the visibility of the box behind the instruments (true or false)
-	showScrews: true,		// Sets the visibility of the four screws around the instruments (true or false)
+	showBox : true,			// Sets the visibility of the box behind the instruments
+	showScrews: true,		// Sets the visibility of the four screws around the instruments
 	airspeed: 0,			// Air speed in knots for an air speed indicator
 	roll : 0,				// Roll angle in degrees for an attitude indicator
 	pitch : 0,				// Pitch angle in degrees for an attitude indicator
