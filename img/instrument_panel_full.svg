@@ -28,17 +28,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="339.60252"
-     inkscape:cy="430.47994"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="831.37169"
+     inkscape:cy="531.71402"
      inkscape:document-units="px"
-     inkscape:current-layer="instrumentDashboard"
+     inkscape:current-layer="instrumentPanel"
      showgrid="false"
      units="px"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -11810,34 +11810,50 @@
              id="rect7671"
              d="m 716.70406,-187.52503 0,1.37223 0,1.37123 0.49253,0 10.42831,0 0.46837,-1.019 6.97284,-0.35223 -6.97284,-0.35341 -0.46837,-1.01882 -10.42831,0 z"
              style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.58973998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-          <flowRoot
-             transform="matrix(0.59007867,0,0,0.59007867,303.9289,-76.237532)"
-             xml:space="preserve"
-             id="flowRoot7709"
-             style="font-style:normal;font-weight:normal;font-size:10.86575222px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
-               id="flowRegion7711"><rect
-                 id="rect7713"
-                 width="38.690636"
-                 height="32.983082"
-                 x="714.93475"
-                 y="-201.27513" /></flowRegion><flowPara
-               id="flowPara7715"
-               style="letter-spacing:-1.14866519px;fill:#ffffff">mb</flowPara></flowRoot>          <g
+          <g
+             transform="matrix(0.59007867,0,0,0.59007867,304.3039,-76.862532)"
+             style="font-style:normal;font-weight:normal;font-size:10.86575222px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             id="flowRoot7709">
+            <path
+               d="m 724.56511,-190.03966 -0.99744,0 0,-3.37433 q 0,-0.382 -0.0371,-0.73747 -0.0318,-0.35547 -0.14325,-0.56769 -0.12203,-0.22814 -0.35017,-0.34486 -0.22814,-0.11672 -0.65789,-0.11672 -0.41913,0 -0.83827,0.21222 -0.41914,0.20692 -0.83828,0.53055 0.0159,0.12203 0.0265,0.2865 0.0106,0.15917 0.0106,0.31834 l 0,3.79346 -0.99744,0 0,-3.37433 q 0,-0.39261 -0.0371,-0.74277 -0.0318,-0.35547 -0.14325,-0.5677 -0.12203,-0.22813 -0.35017,-0.33955 -0.22813,-0.11672 -0.65788,-0.11672 -0.40853,0 -0.82236,0.20161 -0.40853,0.20161 -0.81706,0.51464 l 0,4.42482 -0.99744,0 0,-5.92629 0.99744,0 0,0.65788 q 0.46689,-0.3873 0.92847,-0.60483 0.46689,-0.21752 0.99214,-0.21752 0.60483,0 1.02397,0.25466 0.42444,0.25467 0.63136,0.70564 0.60483,-0.50933 1.10355,-0.73217 0.49872,-0.22813 1.06642,-0.22813 0.97622,0 1.4378,0.59422 0.46689,0.58891 0.46689,1.65002 l 0,3.84652 z"
+               style="letter-spacing:-1.14866519px;fill:#ffffff"
+               id="path6506"
+               inkscape:connector-curvature="0" />
+            <path
+               d="m 730.5524,-193.0479 q 0,0.74277 -0.21222,1.33699 -0.20692,0.59422 -0.56239,0.99744 -0.3767,0.41914 -0.82767,0.63136 -0.45097,0.20692 -0.99213,0.20692 -0.50403,0 -0.88072,-0.12203 -0.3767,-0.11672 -0.74278,-0.31833 l -0.0637,0.27589 -0.93377,0 0,-8.25543 0.99744,0 0,2.94989 q 0.41914,-0.34486 0.89133,-0.56239 0.4722,-0.22283 1.06111,-0.22283 1.0505,0 1.65533,0.80644 0.61014,0.80644 0.61014,2.27608 z m -1.02928,0.0265 q 0,-1.06111 -0.35016,-1.60758 -0.35017,-0.55177 -1.13008,-0.55177 -0.43506,0 -0.88072,0.191 -0.44567,0.18569 -0.82767,0.4828 l 0,3.39555 q 0.42444,0.191 0.72686,0.26528 0.30772,0.0743 0.69503,0.0743 0.82766,0 1.29455,-0.54116 0.47219,-0.54647 0.47219,-1.70839 z"
+               style="letter-spacing:-1.14866519px;fill:#ffffff"
+               id="path6508"
+               inkscape:connector-curvature="0" />
+          </g>
+          <g
              transform="translate(-2.9296875,0)"
              id="g7719">
-            <flowRoot
-               transform="translate(1.0201456,0.41432038)"
-               xml:space="preserve"
-               id="flowRoot7701"
-               style="font-style:normal;font-weight:normal;font-size:10.39763641px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
-                 id="flowRegion7703"><rect
-                   id="rect7705"
-                   width="37.023777"
-                   height="31.562113"
-                   x="913.82416"
-                   y="-201.75914" /></flowRegion><flowPara
-                 id="flowPara7707"
-                 style="letter-spacing:-1.09917879px;fill:#ffffff">IN.Hg</flowPara></flowRoot>            <path
+            <g
+               transform="matrix(0.86855089,0,0,0.86855089,122.91233,-24.076956)"
+               style="font-style:normal;font-weight:normal;font-size:10.39763641px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               id="flowRoot7701">
+              <path
+                 d="m 917.50502,-191.00809 -2.98526,0 0,-0.7717 0.99001,0 0,-6.01621 -0.99001,0 0,-0.7717 2.98526,0 0,0.7717 -0.99001,0 0,6.01621 0.99001,0 0,0.7717 z"
+                 style="letter-spacing:-1.09917879px;fill:#ffffff"
+                 id="path6511" />
+              <path
+                 d="m 923.89438,-191.00809 -1.24386,0 -3.58434,-6.76253 0,6.76253 -0.93924,0 0,-7.55961 1.55863,0 3.26957,6.1736 0,-6.1736 0.93924,0 0,7.55961 z"
+                 style="letter-spacing:-1.09917879px;fill:#ffffff"
+                 id="path6513" />
+              <path
+                 d="m 926.28815,-191.00809 -1.21339,0 0,-1.44694 1.21339,0 0,1.44694 z"
+                 style="letter-spacing:-1.09917879px;fill:#ffffff"
+                 id="path6515" />
+              <path
+                 d="m 933.26643,-191.00809 -1.00524,0 0,-3.70111 -3.77219,0 0,3.70111 -1.00524,0 0,-7.55961 1.00524,0 0,2.96495 3.77219,0 0,-2.96495 1.00524,0 0,7.55961 z"
+                 style="letter-spacing:-1.09917879px;fill:#ffffff"
+                 id="path6517" />
+              <path
+                 d="m 938.7267,-191.65287 q 0,1.44186 -0.65493,2.1171 -0.65493,0.67524 -2.01555,0.67524 -0.45185,0 -0.8834,-0.066 -0.42646,-0.0609 -0.84277,-0.1777 l 0,-0.97478 0.0508,0 q 0.23354,0.0914 0.74123,0.22339 0.5077,0.13708 1.0154,0.13708 0.48739,0 0.80724,-0.11677 0.31984,-0.11677 0.49754,-0.32493 0.17769,-0.198 0.25385,-0.47723 0.0761,-0.27924 0.0761,-0.62447 l 0,-0.51785 q -0.43154,0.34523 -0.82754,0.51785 -0.39093,0.16754 -1.00017,0.16754 -1.01539,0 -1.61447,-0.73108 -0.59401,-0.73616 -0.59401,-2.07141 0,-0.73108 0.20308,-1.25909 0.20815,-0.53308 0.56354,-0.91893 0.33001,-0.36046 0.80216,-0.55847 0.47216,-0.20307 0.93924,-0.20307 0.49247,0 0.82247,0.10154 0.33508,0.0965 0.7057,0.29954 l 0.0609,-0.2437 0.89354,0 0,5.0262 z m -0.95447,-0.91385 0,-3.09188 q -0.38077,-0.17261 -0.71077,-0.24369 -0.32493,-0.0762 -0.64986,-0.0762 -0.78693,0 -1.23878,0.52801 -0.45185,0.528 -0.45185,1.53324 0,0.95447 0.33508,1.44694 0.33508,0.49247 1.11186,0.49247 0.41631,0 0.83262,-0.15739 0.42139,-0.16246 0.7717,-0.43154 z"
+                 style="letter-spacing:-1.09917879px;fill:#ffffff"
+                 id="path6519" />
+            </g>
+            <path
                sodipodi:nodetypes="ccccccccccc"
                inkscape:connector-curvature="0"
                id="path7717"
@@ -12288,7 +12304,7 @@
        inkscape:groupmode="layer"
        id="altimeterLongHand"
        inkscape:label="Dial - Altimeter - Hand 100ft"
-       style="display:none">
+       style="display:inline">
       <g
          id="g8068"
          inkscape:transform-center-x="-8.2447079e-005"
