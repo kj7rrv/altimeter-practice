@@ -98,20 +98,20 @@ attitude.setRoll(30); // Sets the roll to 30 degrees
 Here are the valid methods :
 
 ```js
-indicator.setAirSpeed(speed);				// Set the speed of an airspeed indicator
-indicator.setRoll(roll);					// Set the roll of an attitude indicator
-indicator.setPitch(pitch);					// Set the pitch of an attitude indicator
-indicator.setAltitude(altitude);			// Set the altitude of an altimeter indicator
-indicator.setPressure(pressure, milibars);	// Set the pressure of an altimeter indicator. If the second parameter is true, the units will be set to milibars.
+indicator.setAirSpeed(speed);				// Set speed of an airspeed indicator
+indicator.setRoll(roll);					// Set roll of an attitude indicator
+indicator.setPitch(pitch);					// Set pitch of an attitude indicator
+indicator.setAltitude(altitude);			// Set altitude of an altimeter indicator
+indicator.setPressure(pressure, milibars);	// Set pressure of an altimeter indicator (inHg by default). If the second parameter is true, the units will be set to milibars.
 indicator.setTurn(turn);					// Set angle of turn of a turn coordinator
 indicator.setSlip(slip);					// Set position of slip ball of a turn coordinator. Range is between 0 and 1, 0.5 being the middle.
-indicator.setHeading(heading);				// Set the heading of a heading indicator
-indicator.setBeaconOne(heading, visibile)	// Set the angle of the first beacon of a heading indicator and its visibility
-indicator.setBeaconTwo(heading, visibile)	// Set the angle of the second beacon of a heading indicator and its visibility
-indicator.setVario(vario);					// Set the climb speed of a variometer indicator
-indicator.resize(size);						// Set the size of any indicators
-indicator.toggleBox();						// Toggle the background box of the indicator
-indicator.toggleScrews();					// Toggle the screws that are part of the indicator's background
+indicator.setHeading(heading);				// Set heading of a heading indicator
+indicator.setBeaconOne(heading, visibile)	// Set angle of the first beacon of a heading indicator and its visibility
+indicator.setBeaconTwo(heading, visibile)	// Set angle of the second beacon of a heading indicator and its visibility
+indicator.setVario(vario);					// Set climb speed of a variometer indicator
+indicator.resize(size);						// Set size in pixels of the indicator
+indicator.toggleBox();						// Toggle background box of the indicator
+indicator.toggleScrews();					// Toggle background screws of the indicator
 ```
 
 
