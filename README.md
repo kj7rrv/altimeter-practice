@@ -98,9 +98,9 @@ attitude.setRoll(30); // Sets the roll to 30 degrees
 Here are the valid methods :
 
 ```js
-indicator.setAirSpeed(speed);			// Sets the speed of an airspeed indicator
-indicator.setRoll(roll);			// Sets the roll of an attitude indicator
-indicator.setPitch(pitch);			// Sets the pitch of an attitude indicator
+indicator.setAirSpeed(speed);					// Sets the speed of an airspeed indicator
+indicator.setRoll(roll);					// Sets the roll of an attitude indicator
+indicator.setPitch(pitch);					// Sets the pitch of an attitude indicator
 indicator.setAltitude(altitude);		// Sets the altitude of an altimeter indicator
 indicator.setPressure(pressure, milibars);	// Sets the pressure of an altimeter indicator. If the second parameter is true, the units will be set to milibars.
 indicator.setTurn(turn);			// Set angle of turn of a turn coordinator
