@@ -114,6 +114,8 @@ indicator.toggleBox();						// Toggle background box of the indicator
 indicator.toggleScrews();					// Toggle background screws of the indicator
 ```
 
+Notes
+-----------
 
 == More work to be done
 ![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "move_path woes")
