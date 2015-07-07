@@ -121,7 +121,7 @@ Notes
 
 In order to allow the slip ball to move smoothly, a path animation was required. Loading of this path is done via D3.js, however this will cause issues in Google Chrome when running a turn coordinator directly from an HTML file (ie file:// path). 
 
-To circumvent this issue (for development purposes mainly), the main JS file will inject an SVG path into the DOM. If you modify **turn_ball_path.svg** make sure to also update the highlighted line below with your new path:
+To circumvent this issue (for development purposes mainly), the main JS file will inject an SVG path into the DOM. If you modify **turn_ball_path.svg** make sure to also update the highlighted line below, with your new path:
 
 ![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "move_path woes")
 
