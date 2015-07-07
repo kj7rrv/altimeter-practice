@@ -102,7 +102,7 @@ indicator.setAirSpeed(speed);			// Sets the speed of an airspeed indicator
 indicator.setRoll(roll);			// Sets the roll of an attitude indicator
 indicator.setPitch(pitch);			// Sets the pitch of an attitude indicator
 indicator.setAltitude(altitude);		// Sets the altitude of an altimeter indicator
-indicator.setPressure(pressure, true/false);	// Sets the pressure of an altimeter indicator. If the second parameter is true, the units will be set to milibars. Leave it blank or false and it will be in inHg
+indicator.setPressure(pressure, milibars);	// Sets the pressure of an altimeter indicator. If the second parameter is true, the units will be set to milibars.
 indicator.setTurn(turn);			// Set angle of turn of a turn coordinator
 indicator.setSlip(slip);			// Set position of slip ball of a turn coordinator. Range is between 0 and 1, 0.5 being the middle.
 indicator.setHeading(heading);			// Sets the heading of a heading indicator
