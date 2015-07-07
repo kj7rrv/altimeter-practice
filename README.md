@@ -108,10 +108,10 @@ indicator.setSlip(slip);					// Set position of slip ball of a turn coordinator.
 indicator.setHeading(heading);				// Sets the heading of a heading indicator
 indicator.setBeaconOne(heading, visibile)	// Set the angle of the first beacon of a heading indicator and its visibility
 indicator.setBeaconTwo(heading, visibile)	// Set the angle of the second beacon of a heading indicator and its visibility
-indicator.setVario(vario);				// Sets the climb speed of a variometer indicator
-indicator.resize(size);				// Sets the size of any indicators
-indicator.toggleBox();				// Toggle the background box of the indicator
-indicator.toggleScrews();			// Toggle the screws that are part of the indicator's background
+indicator.setVario(vario);					// Sets the climb speed of a variometer indicator
+indicator.resize(size);						// Sets the size of any indicators
+indicator.toggleBox();						// Toggle the background box of the indicator
+indicator.toggleScrews();					// Toggle the screws that are part of the indicator's background
 ```
 
 
