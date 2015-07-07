@@ -78,8 +78,8 @@ var options = {
 	beacononeshow: true,	// Sets the visibility of the first beacon on the heading indicator
 	beacontwo: 0, 			// Angle of second beacon on heading indicator
 	beacontwoshow: true,	// Sets the visibility of the second beacon on the heading indicator
-	vario: 0,					// Variometer in 1000 feets/min for the variometer indicator
-	img_directory : 'img/'		// The directory where the images are saved to
+	vario: 0,				// Variometer in 1000 feets/min for the variometer indicator
+	img_directory : 'img/'	// The directory where the images are saved to
 }
 ```
 
