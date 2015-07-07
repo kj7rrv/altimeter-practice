@@ -125,7 +125,7 @@ To circumvent this issue (for development purposes mainly), the main JS file wil
 
 ![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "move_path woes")
 
-Author and License
+Authors and License
 -----------
 Authors : Raymond Blaga (raymond.blaga@gmail.com), Edward Hanna (edward.hanna@senecacollege.ca), Sébastien Matton (seb_matton@hotmail.com)
 
