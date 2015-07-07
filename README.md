@@ -27,6 +27,7 @@ The image below shows a zoomed altimeter. Vector images allows you to keep high 
 Usage
 -------------------
 ### Initialization
+
 To use this plugin you need to import a few files in the head of your HTML file :
 
 ```html
@@ -35,9 +36,6 @@ To use this plugin you need to import a few files in the head of your HTML file 
 <script src="js/jquery.flightindicators.js"></script>
 <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
 ```
-
-== More work to be done
-![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "move_path woes")
 
 ### Using the plugin
 Create a `<span>` section to put an indicator in :
@@ -59,21 +57,28 @@ To display the most simple indicator, as for example the attitude indicator, we 
 var indicator = $.flightIndicator('#attitude', 'attitude');
 ```
 
-The type may be `attitude`, `heading`, `variometer`, `airspeed` or `altimeter`. If the type is not correct, the default type will be attitude.
+The type may be `airspeed`, `attitude`, `altimeter`, `turncoordinator`, `heading` or `variometer`. If the type is not correct, nothing will display.
 
 Initial settings can be modified using the `options` parameter. Here are the valid options and the default settings :
 
 ```js
 var options = {
-	size : 200,				// Sets the size in pixels of the indicator (square)
-	roll : 0,				// Roll angle in degrees for an attitude indicator
-	pitch : 0,				// Pitch angle in degrees for an attitude indicator
-	heading: 0,				// Heading angle in degrees for an heading indicator
-	vario: 0,				// Variometer in 1000 feets/min for the variometer indicator
+	size : 200,			// Sets the size in pixels of the indicator (square)
+	showBox : true,			// Sets the visibility of the box behind the instruments (true or false)
+	showScrews: true,		// Sets the visibility of the four screws around the instruments (true or false)
 	airspeed: 0,			// Air speed in knots for an air speed indicator
+	roll : 0,			// Roll angle in degrees for an attitude indicator
+	pitch : 0,			// Pitch angle in degrees for an attitude indicator
 	altitude: 0,			// Altitude in feets for an altimeter indicator
-	pressure: 1000,			// Pressure in hPa for an altimeter indicator
-	showBox : true,			// Sets if the outer squared box is visible or not (true or false)
+	pressure: 30,			// Pressure in inHg for an altimeter indicator
+	turn: 0,			// Turn direction for turn coordinator
+	slip: 0,			// Slip ball position for turn coordinator (0 to 1; 0.5 is middle)
+	heading: 0,			// Heading angle in degrees for an heading indicator
+	beaconone: 0, 			// Angle of first beacon on the heading indicator
+	beacononeshow: true,		// Sets the visibility of the first beacon on the heading indicator
+	beacontwo: 0, 			// Angle of second beacon on heading indicator
+	beacontwoshow: true,		// Sets the visibility of the second beacon on the heading indicator
+	vario: 0,			// Variometer in 1000 feets/min for the variometer indicator
 	img_directory : 'img/'	// The directory where the images are saved to
 }
 ```
@@ -104,6 +109,10 @@ indicator.resize(size);				// Sets the size of any indicators
 indicator.showBox();				// Make the outer squared box of any instrument visible
 indicator.hideBox();				// Make the outer squared box of any instrument invisible
 ```
+
+
+== More work to be done
+![demo_highres](https://raw.githubusercontent.com/uw-ray/Skyhawk-Flight-Instruments/master/docs/move_path.png "move_path woes")
 
 Author and License
 -----------
