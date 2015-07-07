@@ -63,23 +63,23 @@ Initial settings can be modified using the `options` parameter. Here are the val
 
 ```js
 var options = {
-	size : 200,			// Sets the size in pixels of the indicator (square)
+	size : 200,				// Sets the size in pixels of the indicator (square)
 	showBox : true,			// Sets the visibility of the box behind the instruments (true or false)
 	showScrews: true,		// Sets the visibility of the four screws around the instruments (true or false)
 	airspeed: 0,			// Air speed in knots for an air speed indicator
-	roll : 0,			// Roll angle in degrees for an attitude indicator
-	pitch : 0,			// Pitch angle in degrees for an attitude indicator
+	roll : 0,				// Roll angle in degrees for an attitude indicator
+	pitch : 0,				// Pitch angle in degrees for an attitude indicator
 	altitude: 0,			// Altitude in feets for an altimeter indicator
 	pressure: 30,			// Pressure in inHg for an altimeter indicator
-	turn: 0,			// Turn direction for turn coordinator
-	slip: 0,			// Slip ball position for turn coordinator (0 to 1; 0.5 is middle)
-	heading: 0,			// Heading angle in degrees for an heading indicator
+	turn: 0,				// Turn direction for turn coordinator
+	slip: 0,				// Slip ball position for turn coordinator (0 to 1; 0.5 is middle)
+	heading: 0,				// Heading angle in degrees for an heading indicator
 	beaconone: 0, 			// Angle of first beacon on the heading indicator
-	beacononeshow: true,		// Sets the visibility of the first beacon on the heading indicator
+	beacononeshow: true,	// Sets the visibility of the first beacon on the heading indicator
 	beacontwo: 0, 			// Angle of second beacon on heading indicator
-	beacontwoshow: true,		// Sets the visibility of the second beacon on the heading indicator
-	vario: 0,			// Variometer in 1000 feets/min for the variometer indicator
-	img_directory : 'img/'	// The directory where the images are saved to
+	beacontwoshow: true,	// Sets the visibility of the second beacon on the heading indicator
+	vario: 0,					// Variometer in 1000 feets/min for the variometer indicator
+	img_directory : 'img/'		// The directory where the images are saved to
 }
 ```
 
