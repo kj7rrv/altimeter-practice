@@ -21,7 +21,7 @@ Published under GPLv3 License.
 			airspeed : 0,
 			roll : 0,
 			pitch : 0,
-			off_flag: false,
+			off_flag: true,
 			altitude : 0,
 			pressure : 30,
 			turn : 0,
