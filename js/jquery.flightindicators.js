@@ -302,6 +302,7 @@ Published under GPLv3 License.
 		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
+		this.setOffFlag = function(visible){_setOffFlag(visible);}
 		this.setAltitude = function(altitude){_setAltitude(altitude);}
 		this.setPressure = function(pressure, milibar){_setPressure(pressure, milibar);}
 		this.setTurn = function(turn){_setTurn(turn);}
