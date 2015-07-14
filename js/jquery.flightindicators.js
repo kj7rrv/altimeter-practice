@@ -21,6 +21,7 @@ Published under GPLv3 License.
 			airspeed : 0,
 			roll : 0,
 			pitch : 0,
+			off_flag: false,
 			altitude : 0,
 			pressure : 30,
 			turn : 0,
@@ -53,9 +54,10 @@ Published under GPLv3 License.
 				break
 
 				case 'attitude':
-					$(this).html('<div class="instrument attitude"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="attitude box"><img src="' + settings.img_directory + 'attitude_roll_1.svg" class="box" alt="" /><div class="attitude_pitch box"><img src="' + settings.img_directory + 'attitude_pitch.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'attitude_roll_2.svg" class="box" alt="" /></div><div class="attitude_foreground"><img src="' + settings.img_directory + 'attitude_foreground.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument attitude"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="attitude box"><img src="' + settings.img_directory + 'attitude_roll_1.svg" class="box" alt="" /><div class="attitude_pitch box"><img src="' + settings.img_directory + 'attitude_pitch.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'attitude_roll_2.svg" class="box" alt="" /></div><div class="attitude_foreground"><img src="' + settings.img_directory + 'attitude_foreground.svg" class="box" alt="" /></div><div class="attitude_off_flag"><img src="' + settings.img_directory + 'attitude_off_flag.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
 					_setRoll(settings.roll);
 					_setPitch(settings.pitch);
+					_setOffFlag(settings.off_flag);
 				break
 
 				case 'altimeter':
@@ -110,15 +112,22 @@ Published under GPLv3 License.
 			if(pitch>constants.pitch_bound) pitch = constants.pitch_bound;
 			else if(pitch<-constants.pitch_bound) pitch = -constants.pitch_bound;
 			placeholder.each(function(){
-				$(this).find('div.instrument.attitude div.attitude div.attitude_pitch').css('top', pitch*0.25 + '%');
+				$(this).find('div.instrument.attitude div.attitude div.attitude_pitch').css('top', pitch * 0.25 + '%');
 			});
 		}
 
 		// Attitude - Set roll
 		function _setRoll(roll){
 			placeholder.each(function(){
-				$(this).find('div.instrument.attitude div.attitude').css('transform', 'rotate('+roll+'deg)');
+				$(this).find('div.instrument.attitude div.attitude').css('transform', 'rotate('+ roll +'deg)');
 			});
+		}
+
+		// Attitude - Set visibility of the off flag
+		function _setOffFlag(visible){
+			placeholder.each(function(){
+				$(this).find('div.instrument.attitude div.attitude_off_flag').toggle(visible);
+			})
 		}
 
 		// Altimeter - Set altitude
