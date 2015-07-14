@@ -69,6 +69,7 @@ var options = {
 	airspeed: 0,			// Air speed in knots for an air speed indicator
 	roll : 0,				// Roll angle in degrees for an attitude indicator
 	pitch : 0,				// Pitch angle in degrees for an attitude indicator
+	off_flag: false			// Off flag for an attitude indicator
 	altitude: 0,			// Altitude in feets for an altimeter indicator
 	pressure: 30,			// Pressure in inHg for an altimeter indicator
 	turn: 0,				// Turn direction for turn coordinator
@@ -101,6 +102,7 @@ Here are the valid methods :
 indicator.setAirSpeed(speed);				// Set speed of an airspeed indicator
 indicator.setRoll(roll);					// Set roll of an attitude indicator
 indicator.setPitch(pitch);					// Set pitch of an attitude indicator
+indicator.setOffFlag(visible);				// Set visibility of Off flag of an attitude indicator
 indicator.setAltitude(altitude);			// Set altitude of an altimeter indicator
 indicator.setPressure(pressure, milibars);	// Set pressure of an altimeter indicator (inHg by default). If the second parameter is true, the units will be set to milibars.
 indicator.setTurn(turn);					// Set angle of turn of a turn coordinator
