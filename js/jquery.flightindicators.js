@@ -222,11 +222,31 @@ Published under GPLv3 License.
 
         // Variometer - Set vertical speed
         function _setVario(vario){
-            if(vario > constants.vario_bound){vario = constants.vario_bound;}
-            else if(vario < -constants.vario_bound){vario = -constants.vario_bound;}
-            vario = vario*90;
+
+        	/*
+				0		0
+				5		41.65
+				10		84.65
+				15		121.25
+				20		161
+			*/
+
+			/*
+            if (vario > constants.vario_bound) vario = constants.vario_bound;
+            else if (vario < -constants.vario_bound) vario = -constants.vario_bound;
+            */
+
+            if (vario > 20) vario = 20;
+            if (vario < -20) vario = -20;
+
+            //console.log(vario);
+
+            vario = vario * 90;
+
             placeholder.each(function(){
-                $(this).find('div.instrument.vario div.vario_hand').css('transform', 'rotate(' + vario + 'deg)');
+                $(this).find('div.instrument.vario div.vario_hand')
+                	.css('transform', 'rotate(' + vario + 'deg)'); // add transition delay here
+
             });    
         }
 

@@ -35,6 +35,7 @@ Published under GPLv3 License.
 	<script type="text/javascript">
 
 		var increment = 0;
+		var clockwise = true;
 		var variometer = $.flightIndicator('#variometer', 'variometer', {vario:-5});
 
 		function doVariometer(){
@@ -42,10 +43,16 @@ Published under GPLv3 License.
 			var myInterval = setInterval(function() {
 
 				$("#variometerButton").text("Playing");
-			    increment++;
 
-				// Vario update
-			    variometer.setVario(2*Math.sin(increment/10));
+				if (increment > 20) clockwise = false;
+				if (increment < - 20) clockwise = true;
+
+				if (clockwise) increment += 0.1;
+				else increment -= 0.1;
+
+				console.log(increment);
+
+			    variometer.setVario(increment);
 				
 				if(increment == 157){
 					clearInterval(myInterval);
