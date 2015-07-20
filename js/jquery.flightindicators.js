@@ -102,12 +102,13 @@ Published under GPLv3 License.
 			// points, a bunch of if statements are needed here.
 
 			var deg = 0;
-			if (speed >= 0 speed < 40) deg = speed * 0.9;
+			if (speed >= 0 && speed < 40) deg = speed * 0.9;
 			if (speed >= 40 && speed <= 70) deg = speed * 1.8 - 36;
 			if (speed > 70 && speed <= 130) deg = speed * 2 - 50;
 			if (speed > 130 && speed <= 160) deg = speed * 1.8 - 24;
 			if (speed > 160) deg = speed * 1.2 + 72;
-			if (speed > 200) deg = 312 + (speed % 3)
+			if (speed > 200) deg = 312 + (speed % 2);
+
 			placeholder.each(function(){
 				$(this).find('div.instrument.airspeed div.airspeed').css('transform', 'rotate(' + deg + 'deg)');
 			});	
