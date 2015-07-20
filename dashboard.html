@@ -54,6 +54,7 @@ Published under GPLv3 License.
         var increment = 0;
         var ball_increment = 0.5;
         var ball_right = true;
+        var clockwise = true;
 
         var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
         var attitude = $.flightIndicator('#attitude', 'attitude', settings);
@@ -82,8 +83,8 @@ Published under GPLv3 License.
             turn_coordinator.setSlip(ball_increment);
             if (ball_increment <= 0) ball_right = true;
             if (ball_increment >= 1) ball_right = false;
-            if (ball_right == false) ball_increment -= 0.03;
-            else ball_increment += 0.03;
+            if (ball_right == false) ball_increment -= 0.01;
+            else ball_increment += 0.01;
 
             // Heading update
             heading.setHeading(increment);
@@ -91,7 +92,13 @@ Published under GPLv3 License.
             heading.setBeaconTwo(-increment * 0.75, true);
             
             // Vario update
-            variometer.setVario(2*Math.sin(increment/10));
+            if (increment > 20) clockwise = false;
+            if (increment < - 20) clockwise = true;
+
+            if (clockwise) increment += 0.1;
+            else increment -= 0.1;
+
+            variometer.setVario(increment);
 
         }, 50);
 

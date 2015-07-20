@@ -44,11 +44,13 @@ Published under GPLv3 License.
 
 			var myInterval = setInterval(function() {
 
+				console.log(ball_increment);
+
 				turn_coordinator.setSlip(ball_increment);
 				if (ball_increment <= 0) ball_right = true;
 				if (ball_increment >= 1) ball_right = false;
-				if (ball_right == false) ball_increment -= 0.03;
-				else ball_increment += 0.03;
+				if (ball_right == false) ball_increment -= 0.01;
+				else ball_increment += 0.01;
 
 		    	turn_coordinator.setTurn(30*Math.sin(increment/10));
 		    	
