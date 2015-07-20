@@ -129,7 +129,7 @@ To circumvent this issue (for development purposes mainly), the main JS file wil
 
 Authors and License
 -----------
-Authors : Raymond Blaga (raymond.blaga@gmail.com), Edward Hanna (edward.hanna@senecacollege.ca), Sébastien Matton (seb_matton@hotmail.com)
+Authors : Raymond Blaga (raymond.blaga@gmail.com), Edward Hanna (edward.hanna@senecacollege.ca), Pavlo Kuzhel (pavlo.kuzhel@senecacollege.ca), Sébastien Matton (seb_matton@hotmail.com)
 
 Skyhawk Flight Instruments was made for use in an online course with the purpose of training future pilots, developed by Seneca College Centre for Development of Open Technology.
 
