@@ -19,6 +19,7 @@ Published under GPLv3 License.
 			showBox : true,
 			showScrews : true,
 			airspeed : 0,
+			trueairspeed: 0,
 			roll : 0,
 			pitch : 0,
 			off_flag: true,
@@ -47,8 +48,9 @@ Published under GPLv3 License.
 			switch(type){
 
 				case 'airspeed':
-					$(this).html('<div class="instrument airspeed"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="airspeed_markings"><img src="' + settings.img_directory + 'airspeed_markings.svg" class="box" alt="" /></div><div class="airspeed box"><img src="' + settings.img_directory + 'airspeed_hand.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+					$(this).html('<div class="instrument airspeed"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="airspeed_trueairspeed"><img src="' + settings.img_directory + 'airspeed_trueairspeed.svg" class="box" alt="" /></div><div class="airspeed_markings"><img src="' + settings.img_directory + 'airspeed_markings.svg" class="box" alt="" /></div><div class="airspeed box"><img src="' + settings.img_directory + 'airspeed_hand.svg" class="box" alt="" /></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
 					_setAirSpeed(settings.airspeed);
+					_setTrueAirSpeed(settings.trueairspeed);
 				break
 
 				case 'attitude':
@@ -113,6 +115,11 @@ Published under GPLv3 License.
 				$(this).find('div.instrument.airspeed div.airspeed').css('transform', 'rotate(' + deg + 'deg)');
 			});	
 
+		}
+
+		// Air Speed - Set true air speed
+		function _setTrueAirSpeed(speed){
+			// Make me work!
 		}
 
 		// Attitude - Set pitch
@@ -308,6 +315,7 @@ Published under GPLv3 License.
 
 		// Public methods
 		this.setAirSpeed = function(speed){_setAirSpeed(speed);}
+		this.setTrueAirSpeed = function(speed){_setTrueAirSpeed(speed);}
 		this.setRoll = function(roll){_setRoll(roll);}
 		this.setPitch = function(pitch){_setPitch(pitch);}
 		this.setOffFlag = function(visible){_setOffFlag(visible);}
