@@ -22,7 +22,7 @@ Published under GPLv3 License.
 			roll : 0,
 			pitch : 0,
 			off_flag: true,
-			altitude : 0,
+			altitude : 1000,
 			pressure : 30,
 			turn : 0,
 			slip : 0,
@@ -140,9 +140,9 @@ Published under GPLv3 License.
 
 		// Altimeter - Set altitude
 		function _setAltitude(altitude){
-			var hand100 = altitude / 100 * 360;
-			var hand1000 = altitude / 1000 * 360;
-			var hand10000 = altitude / 10000 * 360;
+			var hand100 = altitude / 1000 * 360;
+			var hand1000 = altitude / 10000 * 360;
+			var hand10000 = altitude / 100000 * 360;
 			placeholder.each(function(){
 				$(this).find('div.instrument.altimeter div.altimeter_hand100').css('transform', 'rotate(' + hand100 + 'deg)');
 				$(this).find('div.instrument.altimeter div.altimeter_hand1000').css('transform', 'rotate(' + hand1000 + 'deg)');
