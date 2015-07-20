@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="493.67053"
-     inkscape:cy="460.487"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="294.17454"
+     inkscape:cy="579.20385"
      inkscape:document-units="px"
-     inkscape:current-layer="airspeedIndicatorFg"
+     inkscape:current-layer="layer11"
      showgrid="false"
      units="px"
      showguides="true"
@@ -15052,6 +15052,17 @@
              inkscape:transform-center-y="7.3441232" />
         </g>
       </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:20.00000381px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         x="61.078678"
+         y="98.644196"
+         id="text7536"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan7538"
+           x="61.078678"
+           y="98.644196">Research E6B</tspan></text>
     </g>
     <g
        style="display:inline"
