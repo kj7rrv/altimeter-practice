@@ -37,10 +37,8 @@ Published under GPLv3 License.
 		);
 
 		var constants = {
-			pitch_bound:30,
+			pitch_bound: 30,
 			vario_bound : 1.95,
-			airspeed_bound_l : 0,
-			airspeed_bound_h : 160
 		}
 
 		// Creation of the instrument
@@ -99,12 +97,21 @@ Published under GPLv3 License.
 
 		// Air Speed - Set air speed
 		function _setAirSpeed(speed){
-			if(speed > constants.airspeed_bound_h){speed = constants.airspeed_bound_h;}
-			else if(speed < constants.airspeed_bound_l){speed = constants.airspeed_bound_l;}
-			speed = speed*2;
+
+			// Since the angles between the speed markings change at specific
+			// points, a bunch of if statements are needed here.
+
+			var deg = 0;
+			if (speed >= 0 speed < 40) deg = speed * 0.9;
+			if (speed >= 40 && speed <= 70) deg = speed * 1.8 - 36;
+			if (speed > 70 && speed <= 130) deg = speed * 2 - 50;
+			if (speed > 130 && speed <= 160) deg = speed * 1.8 - 24;
+			if (speed > 160) deg = speed * 1.2 + 72;
+			if (speed > 200) deg = 312 + (speed % 3)
 			placeholder.each(function(){
-				$(this).find('div.instrument.airspeed div.airspeed').css('transform', 'rotate(' + speed + 'deg)');
+				$(this).find('div.instrument.airspeed div.airspeed').css('transform', 'rotate(' + deg + 'deg)');
 			});	
+
 		}
 
 		// Attitude - Set pitch
