@@ -38,8 +38,7 @@ Published under GPLv3 License.
             }, options 
         ),
         constants = {
-            pitch_bound: 26,
-            vario_bound : 1.95,
+            pitch_bound: 26
         }
 
         // Air Speed - Set air speed
@@ -49,15 +48,17 @@ Published under GPLv3 License.
             // points, a bunch of if statements are needed here.
 
             var deg = 0;
+
             if (speed >= 0 && speed < 40) deg = speed * 0.9;
-            if (speed >= 40 && speed <= 70) deg = speed * 1.8 - 36;
-            if (speed > 70 && speed <= 130) deg = speed * 2 - 50;
-            if (speed > 130 && speed <= 160) deg = speed * 1.8 - 24;
-            if (speed > 160) deg = speed * 1.2 + 72;
-            if (speed > 200) deg = 312 + (speed % 2);
+            if (speed >= 40 && speed <= 160) deg = speed * 1.8 - 36;
+            if (speed > 70 && speed <= 160) deg = speed * 2 - 50;
+            if (speed > 160) deg = speed + 110;
+            if (speed > 200) deg = 311 + (speed % 2);
 
             placeholder.each(function(){
-                $(this).find('div.instrument.airspeed div.airspeed').css('transform', 'rotate(' + deg + 'deg)');
+                $(this).find('div.instrument.airspeed div.airspeed')
+                	.css('transform', 'rotate(' + deg + 'deg)')
+                	.css('transition', 'transform 0.1s linear');
             });    
 
         }
@@ -223,29 +224,13 @@ Published under GPLv3 License.
         // Variometer - Set vertical speed
         function _setVario(vario){
 
-        	/*
-				0		0
-				5		41.65
-				10		84.65
-				15		121.25
-				20		161
-			*/
-
-			/*
-            if (vario > constants.vario_bound) vario = constants.vario_bound;
-            else if (vario < -constants.vario_bound) vario = -constants.vario_bound;
-            */
-
-            if (vario > 20) vario = 20;
-            if (vario < -20) vario = -20;
-
-            //console.log(vario);
-
-            vario = vario * 90;
+            var deg = Math.sign(vario) * Math.min(Math.abs(vario), 20) * 8.2;
+            if (vario > 20 || vario < - 20) deg += vario % 2;
 
             placeholder.each(function(){
                 $(this).find('div.instrument.vario div.vario_hand')
-                	.css('transform', 'rotate(' + vario + 'deg)'); // add transition delay here
+                	.css('transform', 'rotate(' + deg + 'deg)')
+                	.css('transition', 'transform 1.0s linear');
 
             });    
         }

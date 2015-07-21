@@ -52,9 +52,10 @@ Published under GPLv3 License.
         };
 
         var increment = 0;
+        var increment_vario = 0;
         var ball_increment = 0.5;
         var ball_right = true;
-        var clockwise = true;
+        var clockwise_vario = true;
 
         var airspeed = $.flightIndicator('#airspeed', 'airspeed', settings);
         var attitude = $.flightIndicator('#attitude', 'attitude', settings);
@@ -66,7 +67,6 @@ Published under GPLv3 License.
         setInterval(function() {
 
             // Airspeed update
-            //airspeed.setAirSpeed(80 * Math.sin(increment/10));
             airspeed.setAirSpeed(increment);
 
             // Attitude update
@@ -92,13 +92,13 @@ Published under GPLv3 License.
             heading.setBeaconTwo(-increment * 0.75, true);
             
             // Vario update
-            if (increment > 20) clockwise = false;
-            if (increment < - 20) clockwise = true;
+            if (increment_vario > 45) clockwise_vario = false;
+            if (increment_vario < - 45) clockwise_vario = true;
 
-            if (clockwise) increment += 0.1;
-            else increment -= 0.1;
+            if (clockwise_vario) increment_vario += 0.3;
+            else increment_vario -= 0.3;
 
-            variometer.setVario(increment);
+            variometer.setVario(increment_vario);
 
         }, 50);
 
