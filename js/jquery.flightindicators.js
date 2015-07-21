@@ -44,9 +44,6 @@ Published under GPLv3 License.
         // Air Speed - Set air speed
         function _setAirSpeed(speed){
 
-            // Since the angles between the speed markings change at specific
-            // points, a bunch of if statements are needed here.
-
             var deg = 0;
 
             if (speed >= 0 && speed < 40) deg = speed * 0.9;
@@ -57,8 +54,8 @@ Published under GPLv3 License.
 
             placeholder.each(function(){
                 $(this).find('div.instrument.airspeed div.airspeed')
-                	.css('transform', 'rotate(' + deg + 'deg)');
-                	
+                    .css('transform', 'rotate(' + deg + 'deg)');
+                    
             });    
 
         }
@@ -73,7 +70,7 @@ Published under GPLv3 License.
             if(pitch>constants.pitch_bound) pitch = constants.pitch_bound;
             else if(pitch<-constants.pitch_bound) pitch = -constants.pitch_bound;
             placeholder.each(function(){
-                $(this).find('div.instrument.attitude div.attitude div.attitude_pitch').css('transform', 'translateY(' + (pitch * 0.25) + '%)')
+                $(this).find('div.instrument.attitude div.attitude div.attitude_pitch').css('transform', 'translateY(' + (pitch * 0.7) + '%)');
             });
         }
 
@@ -88,7 +85,7 @@ Published under GPLv3 License.
         function _setOffFlag(visible){
             placeholder.each(function(){
                 $(this).find('div.instrument.attitude div.attitude_off_flag').toggle(visible);
-            })
+            });
         }
 
         // Altimeter - Set altitude
@@ -229,8 +226,8 @@ Published under GPLv3 License.
 
             placeholder.each(function(){
                 $(this).find('div.instrument.vario div.vario_hand')
-                	.css('transform', 'rotate(' + deg + 'deg)')
-                	.css('transition', 'transform 1.0s linear');
+                    .css('transform', 'rotate(' + deg + 'deg)')
+                    .css('transition', 'transform 1.0s linear');
 
             });    
         }
@@ -337,7 +334,7 @@ Published under GPLv3 License.
     $.flightIndicator = function(placeholder, type, options){
         var flightIndicator = new FlightIndicator($(placeholder), type, options);
         return flightIndicator;
-    }
+    };
 
     $.fn.flightIndicator = function(data, type, options){
         return this.each(function(){
