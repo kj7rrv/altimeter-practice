@@ -57,8 +57,8 @@ Published under GPLv3 License.
 
             placeholder.each(function(){
                 $(this).find('div.instrument.airspeed div.airspeed')
-                	.css('transform', 'rotate(' + deg + 'deg)')
-                	.css('transition', 'transform 0.1s linear');
+                	.css('transform', 'rotate(' + deg + 'deg)');
+                	
             });    
 
         }
