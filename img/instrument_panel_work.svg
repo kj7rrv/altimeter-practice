@@ -28,19 +28,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="412.64852"
-     inkscape:cy="397.11329"
+     inkscape:zoom="2"
+     inkscape:cx="180.05388"
+     inkscape:cy="514.10116"
      inkscape:document-units="px"
-     inkscape:current-layer="layer12"
+     inkscape:current-layer="instrumentPanel"
      showgrid="false"
      units="px"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1149"
-     inkscape:window-x="0"
-     inkscape:window-y="1"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      guidetolerance="20"
      gridtolerance="10">
@@ -2410,7 +2410,7 @@
   </metadata>
   <g
      transform="translate(0,461.99998)"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      inkscape:label="Dashboard"
      id="instrumentDashboard"
      inkscape:groupmode="layer"
@@ -3063,7 +3063,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="verticalspeed"
-     style="display:inline"
+     style="display:none"
      sodipodi:insensitive="true">
     <g
        inkscape:groupmode="layer"
@@ -3571,7 +3571,7 @@
       <g
          id="g9382"
          inkscape:transform-center-x="24.01926"
-         inkscape:transform-center-y="8.4199961e-05"
+         inkscape:transform-center-y="8.4199961e-005"
          transform="matrix(0,-1,1,0,179.28074,698.41257)">
         <path
            id="path9363"
@@ -3696,7 +3696,7 @@
     </g>
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="heading"
      id="layer7"
      inkscape:groupmode="layer"
@@ -4711,7 +4711,7 @@
   </g>
   <g
      transform="translate(0,416)"
-     style="display:inline"
+     style="display:none"
      inkscape:label="turncoordinator"
      id="layer5"
      inkscape:groupmode="layer"
@@ -4900,7 +4900,7 @@
        style="display:inline">
       <g
          inkscape:transform-center-y="-12.019229"
-         inkscape:transform-center-x="-6.5346367e-05"
+         inkscape:transform-center-x="-6.5346367e-005"
          id="g8303">
         <path
            inkscape:transform-center-y="-12.000017"
@@ -5219,7 +5219,7 @@
   </g>
   <g
      transform="translate(0,416)"
-     style="display:inline"
+     style="display:none"
      inkscape:label="altimeter"
      id="layer1"
      inkscape:groupmode="layer"
@@ -12220,7 +12220,7 @@
            d="m -1284.6993,104.4471 -41.7112,-128.806601 -41.7111,128.806601 41.7111,0 41.7112,0 z"
            id="path12025"
            inkscape:connector-curvature="0"
-           inkscape:transform-center-x="-2.0951847e-05"
+           inkscape:transform-center-x="-2.0951847e-005"
            inkscape:transform-center-y="64.403175" />
         <path
            style="opacity:1;fill:#000a6c;fill-opacity:0.42995169;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12501,7 +12501,7 @@
        style="display:inline">
       <g
          id="g8068"
-         inkscape:transform-center-x="-8.2447079e-05"
+         inkscape:transform-center-x="-8.2447079e-005"
          inkscape:transform-center-y="-31.302459">
         <path
            transform="translate(47.997196,-461.99998)"
@@ -12787,11 +12787,10 @@
   </g>
   <g
      transform="translate(0,416)"
-     style="display:inline"
+     style="display:none"
      inkscape:label="attitude"
      id="layer3"
-     inkscape:groupmode="layer"
-     sodipodi:insensitive="true">
+     inkscape:groupmode="layer">
     <g
        transform="translate(-47.997196,45.99998)"
        inkscape:groupmode="layer"
@@ -13523,7 +13522,7 @@
            inkscape:connector-curvature="0"
            transform="scale(-1,-1)"
            style="fill:#ffffff;fill-opacity:1;stroke:none"
-           inkscape:transform-center-x="-2.6870936e-05"
+           inkscape:transform-center-x="-2.6870936e-005"
            inkscape:transform-center-y="82.499995"
            d="m -129.63777,-156.35001 0.69277,0 0,13.85538 -0.69277,0 z"
            id="rect4159-0-5-8-9-3-9" />
@@ -13620,7 +13619,7 @@
            transform="matrix(0,-1,1,0,0,0)"
            style="fill:#ffffff;fill-opacity:1;stroke:none"
            inkscape:transform-center-x="82.500029"
-           inkscape:transform-center-y="-1.2185021e-05"
+           inkscape:transform-center-y="-1.2185021e-005"
            d="m -92.615288,65.210243 0.692769,0 0,13.855373 -0.692769,0 z"
            id="rect4159-0-5-8-9-3-9-4-2-7-3-6" />
         <path
@@ -13700,7 +13699,7 @@
            transform="matrix(0,1,-1,0,0,0)"
            style="fill:#ffffff;fill-opacity:1;stroke:none"
            inkscape:transform-center-x="-79.999985"
-           inkscape:transform-center-y="4.5951779e-05"
+           inkscape:transform-center-y="4.5951779e-005"
            d="m 91.576172,-193.37242 1.385537,0 0,17.31921 -1.385537,0 z"
            id="rect4159-6-74-0-9" />
         <path
@@ -14305,7 +14304,7 @@
         <path
            id="path8250"
            d="m 65.210243,92.615288 0,-0.692769 13.855373,0 0,0.692769 z"
-           inkscape:transform-center-y="-1.2185021e-05"
+           inkscape:transform-center-y="-1.2185021e-005"
            inkscape:transform-center-x="82.500029"
            style="fill:#ffffff;fill-opacity:1;stroke:none"
            inkscape:connector-curvature="0" />
@@ -14904,7 +14903,7 @@
              inkscape:connector-curvature="0"
              style="fill:#ffffff;fill-opacity:1;stroke:none"
              inkscape:transform-center-x="-110.85545"
-             inkscape:transform-center-y="4.5951779e-05"
+             inkscape:transform-center-y="4.5951779e-005"
              d="m 193.37242,91.581932 0,1.385537 -17.31921,0 0,-1.385537 z"
              id="path7404" />
           <circle
@@ -14979,7 +14978,7 @@
           <path
              id="path8071"
              d="m 65.197735,92.967434 2e-5,-1.385562 17.319204,7e-6 -2.2e-5,1.385551 z"
-             inkscape:transform-center-y="-4.5328451e-05"
+             inkscape:transform-center-y="-4.5328451e-005"
              inkscape:transform-center-x="110.85545"
              style="fill:#ffffff;fill-opacity:1;stroke:none"
              inkscape:connector-curvature="0" />
@@ -14987,7 +14986,7 @@
              inkscape:connector-curvature="0"
              style="fill:#ffffff;fill-opacity:1;stroke:none"
              inkscape:transform-center-x="110.85545"
-             inkscape:transform-center-y="-4.5328451e-05"
+             inkscape:transform-center-y="-4.5328451e-005"
              d="m 65.197735,92.967434 2e-5,-1.385562 17.319204,7e-6 -2.2e-5,1.385551 z"
              id="path8073" />
           <path
@@ -15043,7 +15042,7 @@
              id="path8157"
              d="m 129.65056,145.97206 -0.72926,-1e-5 -2e-5,-3.46134 0.72927,1e-5 z"
              inkscape:transform-center-y="103.9334"
-             inkscape:transform-center-x="1.1824272e-05"
+             inkscape:transform-center-x="1.1824272e-005"
              style="fill:#ffffff;fill-opacity:1;stroke:none"
              inkscape:connector-curvature="0" />
           <path
@@ -15292,7 +15291,7 @@
                id="path6571"
                d="m -129.63777,-156.35001 0.69277,0 0,13.85538 -0.69277,0 z"
                inkscape:transform-center-y="82.499995"
-               inkscape:transform-center-x="-2.6870936e-05"
+               inkscape:transform-center-x="-2.6870936e-005"
                style="fill:#ffffff;fill-opacity:1;stroke:none"
                transform="scale(-1,-1)"
                inkscape:connector-curvature="0" />
@@ -15387,7 +15386,7 @@
             <path
                id="path6600"
                d="m -92.615288,65.210243 0.692769,0 0,13.855373 -0.692769,0 z"
-               inkscape:transform-center-y="-1.2185021e-05"
+               inkscape:transform-center-y="-1.2185021e-005"
                inkscape:transform-center-x="82.500029"
                style="fill:#ffffff;fill-opacity:1;stroke:none"
                transform="matrix(0,-1,1,0,0,0)"
@@ -15467,7 +15466,7 @@
             <path
                id="path6623"
                d="m 91.576172,-193.37242 1.385537,0 0,17.31921 -1.385537,0 z"
-               inkscape:transform-center-y="4.5951779e-05"
+               inkscape:transform-center-y="4.5951779e-005"
                inkscape:transform-center-x="-79.999985"
                style="fill:#ffffff;fill-opacity:1;stroke:none"
                transform="matrix(0,1,-1,0,0,0)"

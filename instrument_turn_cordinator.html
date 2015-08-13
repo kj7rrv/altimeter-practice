@@ -44,8 +44,6 @@ Published under GPLv3 License.
 
 			var myInterval = setInterval(function() {
 
-				console.log(ball_increment);
-
 				turn_coordinator.setSlip(ball_increment);
 				if (ball_increment <= 0) ball_right = true;
 				if (ball_increment >= 1) ball_right = false;
