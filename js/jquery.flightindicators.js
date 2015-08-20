@@ -251,7 +251,7 @@ Published under GPLv3 License.
         // Toggle dashboard screws for instrument
         function _toggleScrews(toggle){
             placeholder.each(function(){
-                $(this).find('.indicator_background').toggle(toggle);
+                $(this).find('.indicator_background_screws').toggle(toggle);
             });
         }
 
@@ -311,10 +311,10 @@ Published under GPLv3 License.
 
             }
 
-            $(this).find('div.instrument').css({height : settings.size, width : settings.size});
-            $(this).find('div.instrument .indicator_background').toggle(settings.showBox);
-            $(this).find('div.instrument .indicator_background_screws').toggle(settings.showScrews);
-            $(this).find('div.instrument .indicator_inner').toggle(settings.showIndicatorInner);
+            _resize(settings.size);
+            _toggleBox(settings.showBox);
+            _toggleScrews(settings.showScrews);
+            _toggleIndicatorInner(settings.showIndicatorInner);
 
         });
 
