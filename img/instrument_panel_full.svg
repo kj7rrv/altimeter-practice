@@ -2818,6 +2818,52 @@
     </g>
   </g>
   <g
+     id="layer10">
+    <path
+       id="rect6785"
+       d="m 1063.7637,86.861971 179.3598,0 0,44.865519 -179.3598,0 z"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       id="rect6737"
+       d="m 1080.085,92.848603 38.4975,0 c 3.5535,0 6.4143,2.86076 6.4143,6.41426 l 0,20.064037 c 0,3.5535 -2.8608,6.41426 -6.4143,6.41426 l -38.4975,0 c -3.5535,0 -6.4142,-2.86076 -6.4142,-6.41426 l 0,-20.064037 c 0,-3.5535 2.8607,-6.41426 6.4142,-6.41426 z"
+       style="opacity:1;fill:#00203f;fill-opacity:1;stroke:none;stroke-width:2.03820324;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       id="text6739"
+       style="font-style:normal;font-weight:normal;font-size:63.60224915px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.48312136,0,0,0.4831258,535.00188,94.287708)">
+      <path
+         id="path6782"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+         d="m 1146.0153,31.340967 q 0,-6.956496 2.0807,-11.676976 1.5528,-3.478248 4.2236,-6.242213 2.7019,-2.763965 5.9006,-4.0993634 4.2547,-1.8012356 9.8137,-1.8012356 10.062,0 16.0869,6.242213 6.0558,6.242213 6.0558,17.360184 0,11.024804 -5.9937,17.267017 -5.9938,6.211157 -16.0248,6.211157 -10.1553,0 -16.149,-6.180101 -5.9938,-6.211157 -5.9938,-17.080682 z m 9.472,-0.310558 q 0,7.73289 3.5714,11.739087 3.5715,3.97514 9.0683,3.97514 5.4969,0 9.0062,-3.944084 3.5404,-3.975141 3.5404,-11.894366 0,-7.826058 -3.4472,-11.676976 -3.4162,-3.850917 -9.0994,-3.850917 -5.6832,0 -9.1614,3.913029 -3.4783,3.881973 -3.4783,11.739087 z" />
+    </g>
+    <path
+       id="rect6759"
+       d="m 1134.1948,92.848603 38.4975,0 c 3.5535,0 6.4143,2.86076 6.4143,6.41426 l 0,20.064037 c 0,3.5535 -2.8608,6.41426 -6.4143,6.41426 l -38.4975,0 c -3.5534,0 -6.4142,-2.86076 -6.4142,-6.41426 l 0,-20.064037 c 0,-3.5535 2.8608,-6.41426 6.4142,-6.41426 z"
+       style="opacity:1;fill:#403000;fill-opacity:1;stroke:none;stroke-width:2.03820324;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       id="text6761"
+       style="font-style:normal;font-weight:normal;font-size:63.60224915px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.48312136,0,0,0.4831258,535.00188,94.287708)">
+      <path
+         id="path6778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+         d="m 1258.1088,53.825356 0,-45.5277823 13.7577,0 8.2609,31.0557853 8.1676,-31.0557853 13.7888,0 0,45.5277823 -8.5403,0 0,-35.838377 -9.0373,35.838377 -8.8509,0 -9.0062,-35.838377 0,35.838377 -8.5403,0 z" />
+    </g>
+    <path
+       id="rect6765"
+       d="m 1188.3047,92.848603 38.4974,0 c 3.5536,0 6.4144,2.86076 6.4144,6.41426 l -10e-5,20.064037 c 0,3.5535 -2.8607,6.41426 -6.4143,6.41426 l -38.4974,0 c -3.5535,0 -6.4143,-2.86076 -6.4143,-6.41426 l 0,-20.064037 c 0,-3.5535 2.8608,-6.41426 6.4143,-6.41426 z"
+       style="opacity:1;fill:#404040;fill-opacity:1;stroke:none;stroke-width:2.03820324;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       id="text6767"
+       style="font-style:normal;font-weight:normal;font-size:63.60224915px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.48312136,0,0,0.4831258,535.00188,94.287708)">
+      <path
+         id="path6773"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+         d="m 1387.5004,53.825356 0,-45.5277823 9.1925,0 0,45.5277823 -9.1925,0 z" />
+    </g>
+  </g>
+  <g
      style="display:inline"
      id="layer2">
     <g

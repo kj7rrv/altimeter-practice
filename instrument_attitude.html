@@ -50,6 +50,9 @@ Published under GPLv3 License.
 			// Attitude update
 		    attitude.setRoll(increment);
 		    increment--;
+
+		    attitude.setILSLocalizer(increment);
+		    attitude.setILSGlideslope(increment);
 			
 			if(increment == -20){
 			clearInterval(myInterval);
@@ -60,7 +63,10 @@ Published under GPLv3 License.
 				
 				// Attitude update
 				attitude.setRoll(increment);
-				
+
+			    attitude.setILSLocalizer(increment);
+			    attitude.setILSGlideslope(increment);
+
 				if(increment == 0){
 					clearInterval(myInterval);
 					$("#attitudeBankRight").attr('disabled',false);
@@ -82,6 +88,9 @@ Published under GPLv3 License.
 			// Attitude update
 		    attitude.setRoll(increment);	
 		    increment++;
+
+			attitude.setILSLocalizer(increment);
+			attitude.setILSGlideslope(increment);
 			
 			if(increment == 20){
 			clearInterval(myInterval);
@@ -91,6 +100,9 @@ Published under GPLv3 License.
 				
 				// Attitude update
 				attitude.setRoll(increment);
+
+			    attitude.setILSLocalizer(increment);
+			    attitude.setILSGlideslope(increment);
 				
 				if(increment == 0){
 					clearInterval(myInterval);

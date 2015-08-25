@@ -73,6 +73,8 @@ Published under GPLv3 License.
             // Attitude update
             attitude.setRoll(30*Math.sin(increment/10));
             attitude.setPitch(50*Math.sin(increment/20));
+            attitude.setILSLocalizer(15*Math.sin(increment/30));
+            attitude.setILSGlideslope(20*Math.sin(increment/30));
 
             // Altimeter update
             altimeter.setAltitude(10*increment);

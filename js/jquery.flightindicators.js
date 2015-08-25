@@ -24,7 +24,10 @@ Published under GPLv3 License.
             trueairspeed: 0,
             roll : 0,
             pitch : 0,
-            off_flag: false,
+            off_flag: true,
+            ils: true,
+            ils_localizer: 14.5,
+            ils_glideslope: 14.5,
             altitude : 0,
             pressure : 30,
             turn : 0,
@@ -87,6 +90,39 @@ Published under GPLv3 License.
             placeholder.each(function(){
                 $(this).find('div.instrument.attitude div.attitude_off_flag').toggle(visible);
             });
+        }
+
+        // Attitude - Instrument landing system - Set visibility
+        function _setILS(visible){
+        	placeholder.each(function(){
+        		$(this).find('div.instrument.attitude div.attitude_ils').toggle(visible);
+        	});
+        }
+
+		// Attitude - Instrument landing system - Set localizer angle
+        function _setILSLocalizer(angle){
+
+        	var ang = (Math.abs(angle) > 14.5) ? (Math.abs(angle) / angle) * 14.5 : angle;
+
+        	placeholder.each(function(){
+        		$(this).find('div.instrument.attitude div.attitude_ils_localizer').css({
+        			'transform': 'rotate(' + ang + 'deg)',
+        			'transform-origin': 'center top'
+        		});
+        	});
+        }
+
+		// Attitude - Instrument landing system - Set glideslope angle
+        function _setILSGlideslope(angle){
+
+        	var ang = (Math.abs(angle) > 14.5) ? (Math.abs(angle) / angle) * 14.5 : angle;
+
+        	placeholder.each(function(){
+        		$(this).find('div.instrument.attitude div.attitude_ils_glideslope').css({
+        			'transform': 'rotate(' + ang + 'deg)',
+        			'transform-origin': 'center left'
+        		});
+        	});
         }
 
         // Altimeter - Set altitude
@@ -274,10 +310,13 @@ Published under GPLv3 License.
                 break
 
                 case 'attitude':
-                    $(this).html('<div class="instrument attitude"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="indicator_inner"><div class="attitude box"><img src="' + settings.img_directory + 'attitude_roll_1.svg" class="box" alt="" /><div class="attitude_pitch box"><img src="' + settings.img_directory + 'attitude_pitch.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'attitude_roll_2.svg" class="box" alt="" /></div><div class="attitude_foreground"><img src="' + settings.img_directory + 'attitude_foreground.svg" class="box" alt="" /></div><div class="attitude_off_flag"><img src="' + settings.img_directory + 'attitude_off_flag.svg" class="box" alt="" /></div></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
+                    $(this).html('<div class="instrument attitude"><div class="indicator_background"><img src="' + settings.img_directory + 'indicator_background_dashboard.svg" class="box" alt="" /></div><div class="indicator_background_screws"><img src="' + settings.img_directory + 'indicator_background_screws.svg" class="box" alt="" /></div><div class="indicator_inner"><div class="attitude box"><img src="' + settings.img_directory + 'attitude_roll_1.svg" class="box" alt="" /><div class="attitude_pitch box"><img src="' + settings.img_directory + 'attitude_pitch.svg" class="box" alt="" /></div><img src="' + settings.img_directory + 'attitude_roll_2.svg" class="box" alt="" /></div><div class="attitude_foreground_1"><img src="' + settings.img_directory + 'attitude_foreground_1.svg" class="box" alt="" /></div><div class="attitude_ils"><img src="' + settings.img_directory + 'attitude_ils_markings.svg" class="box" alt="" /><div class="attitude_ils_localizer box"><img src="' + settings.img_directory + 'attitude_ils_localizer.svg" class="box" alt="" /></div><div class="attitude_ils_glideslope box"><img src="' + settings.img_directory + 'attitude_ils_glideslope.svg" class="box" alt="" /></div></div><div class="attitude_foreground_2"><img src="' + settings.img_directory + 'attitude_foreground_2.svg" class="box" alt="" /></div><div class="attitude_off_flag"><img src="' + settings.img_directory + 'attitude_off_flag.svg" class="box" alt="" /></div></div><div class="indicator_foreground"><img src="' + settings.img_directory + 'indicator_foreground.svg" class="box" alt="" /></div></div>');
                     _setRoll(settings.roll);
                     _setPitch(settings.pitch);
                     _setOffFlag(settings.off_flag);
+                    _setILS(settings.ils);
+                    _setILSLocalizer(settings.ils_localizer);
+                    _setILSGlideslope(settings.ils_glideslope);
                 break
 
                 case 'altimeter':
@@ -324,6 +363,9 @@ Published under GPLv3 License.
         this.setRoll = function(roll){_setRoll(roll);}
         this.setPitch = function(pitch){_setPitch(pitch);}
         this.setOffFlag = function(visible){_setOffFlag(visible);}
+        this.setILS = function(visible){_setILS(visible);}
+        this.setILSLocalizer = function(angle){_setILSLocalizer(angle);}
+        this.setILSGlideslope = function(angle){_setILSGlideslope(angle);}
         this.setAltitude = function(altitude){_setAltitude(altitude);}
         this.setPressure = function(pressure, milibar){_setPressure(pressure, milibar);}
         this.setTurn = function(turn){_setTurn(turn);}
