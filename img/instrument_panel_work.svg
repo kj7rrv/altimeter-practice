@@ -28,19 +28,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710677"
-     inkscape:cx="562.42104"
-     inkscape:cy="510.7991"
+     inkscape:zoom="0.70710676"
+     inkscape:cx="315.82869"
+     inkscape:cy="317.54743"
      inkscape:document-units="px"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer20"
      showgrid="false"
      units="px"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="1150"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      guidetolerance="20"
      gridtolerance="10">
@@ -49,7 +49,7 @@
        inkscape:label=""
        id="guide4401"
        orientation="1,0"
-       position="482.00001,1087" />
+       position="479.99101,1087" />
     <sodipodi:guide
        inkscape:color="rgb(0,0,255)"
        inkscape:label=""
@@ -13565,58 +13565,6 @@
            id="g7976">
           <g
              style="fill:#000000"
-             id="g7978">
-            <rect
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               id="rect7980"
-               width="8"
-               height="1"
-               x="570"
-               y="-140.653"
-               inkscape:transform-center-x="-94.007815" />
-            <rect
-               inkscape:transform-center-x="-92.579636"
-               y="-55.173992"
-               x="587.04517"
-               height="1"
-               width="8"
-               id="rect7982"
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               transform="matrix(0.98480775,-0.17364818,0.17364818,0.98480775,0,0)"
-               inkscape:transform-center-y="-16.324289" />
-            <rect
-               inkscape:transform-center-y="-32.152577"
-               transform="matrix(0.93969262,-0.34202015,0.34202015,0.93969262,0,0)"
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               id="rect7984"
-               width="8"
-               height="1"
-               x="588.9881"
-               y="31.966257"
-               inkscape:transform-center-x="-88.338469" />
-            <rect
-               inkscape:transform-center-x="-92.579642"
-               y="-221.87354"
-               x="538.37054"
-               height="1"
-               width="8"
-               id="rect7986"
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               transform="matrix(0.98480775,0.17364818,-0.17364818,0.98480775,0,0)"
-               inkscape:transform-center-y="16.324285" />
-            <rect
-               inkscape:transform-center-y="32.152576"
-               transform="matrix(0.93969262,0.34202015,-0.34202015,0.93969262,0,0)"
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               id="rect7988"
-               width="8"
-               height="1"
-               x="493.1178"
-               y="-296.36774"
-               inkscape:transform-center-x="-88.338469" />
-          </g>
-          <g
-             style="fill:#000000"
              id="g7990">
             <rect
                style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
@@ -13811,57 +13759,6 @@
         </g>
         <g
            id="g7946">
-          <g
-             id="g7834">
-            <rect
-               inkscape:transform-center-x="-94.007815"
-               y="-140.653"
-               x="570"
-               height="1"
-               width="8"
-               id="rect7688"
-               style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157" />
-            <rect
-               inkscape:transform-center-y="-16.324289"
-               transform="matrix(0.98480775,-0.17364818,0.17364818,0.98480775,0,0)"
-               style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               id="rect7690"
-               width="8"
-               height="1"
-               x="587.04517"
-               y="-55.173992"
-               inkscape:transform-center-x="-92.579636" />
-            <rect
-               inkscape:transform-center-x="-88.338469"
-               y="31.966257"
-               x="588.9881"
-               height="1"
-               width="8"
-               id="rect7692"
-               style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               transform="matrix(0.93969262,-0.34202015,0.34202015,0.93969262,0,0)"
-               inkscape:transform-center-y="-32.152577" />
-            <rect
-               inkscape:transform-center-y="16.324285"
-               transform="matrix(0.98480775,0.17364818,-0.17364818,0.98480775,0,0)"
-               style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               id="rect7694"
-               width="8"
-               height="1"
-               x="538.37054"
-               y="-221.87354"
-               inkscape:transform-center-x="-92.579642" />
-            <rect
-               inkscape:transform-center-x="-88.338469"
-               y="-296.36774"
-               x="493.1178"
-               height="1"
-               width="8"
-               id="rect7696"
-               style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.80392157"
-               transform="matrix(0.93969262,0.34202015,-0.34202015,0.93969262,0,0)"
-               inkscape:transform-center-y="32.152576" />
-          </g>
           <g
              id="g7923">
             <rect
@@ -14335,10 +14232,11 @@
        style="display:inline">
       <path
          id="path4405-3-1-1-9-1"
-         d="m 527.9884,-330.60226 c -79.7765,10e-4 -144.44777,64.67268 -144.44921,144.44919 -7.2e-4,79.77802 64.67099,144.451667 144.44901,144.453087 79.77953,7.2e-4 144.454,-64.673567 144.45328,-144.453087 -10e-4,-79.77801 -64.67507,-144.44991 -144.45308,-144.44919 z m 0,15.65623 c 71.13157,-10e-4 128.796,57.66139 128.79682,128.79296 10e-4,71.13308 -57.66373,128.79817 -128.79682,128.79685 -71.13156,-8.2e-4 -128.79429,-57.66529 -128.79295,-128.79685 8.2e-4,-71.13005 57.66291,-128.79214 128.79295,-128.79296 z"
+         d="m 527.9884,-330.60226 c -79.7765,10e-4 -144.44777,64.67268 -144.44921,144.44919 -7.2e-4,79.77802 64.57998,144.451667 144.358,144.453087 79.77953,7.2e-4 144.54501,-64.673567 144.54429,-144.453087 -10e-4,-79.77801 -64.67507,-144.44991 -144.45308,-144.44919 z m 0,15.65623 c 71.13157,-10e-4 128.796,57.66139 128.79682,128.79296 10e-4,71.13308 -57.66373,128.79817 -128.79682,128.79685 -71.13156,-8.2e-4 -128.79429,-57.66529 -128.79295,-128.79685 8.2e-4,-71.13005 57.66291,-128.79214 128.79295,-128.79296 z"
          style="display:inline;opacity:1;fill:url(#radialGradient5742-9-38-1);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          inkscape:connector-curvature="0"
-         transform="translate(-47.99719,45.99998)" />
+         transform="translate(-47.99719,45.99998)"
+         sodipodi:nodetypes="ssssssssss" />
       <g
          transform="matrix(1.9999996,0,0,1.9999996,221.42203,-324.73394)"
          id="g4793-02-9"
