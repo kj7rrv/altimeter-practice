@@ -61,3 +61,20 @@ body {
     font-family: monospace;
     text-align: center;
 }
+
+#input {
+    font-size: 24px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    width: 5em;
+    outline: none;
+}
+
+#button {
+    font-size: 24px;
+    border: none;
+    background-color: white;
+    color: black;
+}
