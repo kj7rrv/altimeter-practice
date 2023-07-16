@@ -54,3 +54,10 @@ div.instrument.altimeter div.needle {
 div.instrument.altimeter div.needleSmall {
   transform: rotate(90deg);
 }
+
+body {
+    background-color: #444547;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+}
