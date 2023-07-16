@@ -17,11 +17,9 @@ Published under GPLv3 License.
         <meta charset="utf-8">
         <title>Altimeter Practice</title>
         <script src="js/jquery-1.11.3.js"></script>
-        <script src="js/d3.min.js"></script>
         <script src="js/jquery.flightindicators.js"></script>
-        <script src="js/bootstrap.min.js"></script>    
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/flightindicators.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <h1>ALTIMETER PRACTICE</h1>
@@ -29,44 +27,10 @@ Published under GPLv3 License.
             <div>
                 <span id="altimeter"></span>
             </div>
-            <div>
-                <button id="altimiterButton" class="btn btn-default" type="submit">Button</button>
-            </div>
         </div>
 
         <script type="text/javascript">
-
-            var increment = 0;
-            var altimeter = $.flightIndicator('#altimeter', 'altimeter');
-
-            function doAltimeter(){
-
-                var myInterval = setInterval(function() {
-
-                    // Altimeter update
-                    altimeter.setAltitude(3*increment);
-                    altimeter.setPressure(30+3*Math.sin(increment/50)/10);
-                    increment++;
-                    
-                    if(increment == 5000){
-                        clearInterval(myInterval);
-                        $("#altimiterButton").attr('disabled',false);
-                        $("#altimiterButton").text("Start");
-                        altimeter.setAltitude(0);
-                        altimeter.setPressure(0);
-                    }
-
-                }, 50);
-
-            }
-
-            $("#altimiterButton").text("Start");
-            $("#altimiterButton").on("click", function() {
-                $("#altimiterButton").attr('disabled', true);
-                $("#altimiterButton").text("Playing");
-                doAltimeter();
-            });
-                    
+            const altimeter = $.flightIndicator('#altimeter', 'altimeter');
         </script>
     </body>
 </html>
