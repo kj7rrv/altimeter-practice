@@ -14,11 +14,17 @@ let altitude = update(0, 18000, 10)
 button.addEventListener("click", function(e){
     e.preventDefault()
     if (input.value == altitude) {
-        alert("Yes!")
-        altitude = update(0, 18000, 10)
-        input.value = ""
+        input.classList = ["correct"]
+        setTimeout(function(){
+            altitude = update(0, 18000, 10)
+            input.value = ""
+            input.classList = []
+        }, 1000)
     } else {
-        alert("No.")
-        input.value = ""
+        input.classList = ["incorrect"]
+        setTimeout(function(){
+            input.value = ""
+            input.classList = []
+        }, 1000)
     }
 })

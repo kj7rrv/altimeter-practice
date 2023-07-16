@@ -72,9 +72,21 @@ body {
     outline: none;
 }
 
+#input.correct {
+    background-color: #008800;
+}
+
+#input.incorrect {
+    background-color: #880000;
+}
+
 #button {
     font-size: 24px;
     border: none;
     background-color: white;
     color: black;
+}
+
+a {
+    color: #8888FF;
 }
