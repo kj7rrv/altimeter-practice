@@ -28,23 +28,6 @@ div.instrument .box {
   height: 100%;
 }
 
-/* Default transformations */
-
-div.instrument.attitude div.roll {
-  transform: rotate(0deg);
-}
-div.instrument.attitude div.roll div.pitch {
-  top: 0%;
-}
-div.instrument.heading div.yaw {
-  transform: rotate(0deg);
-}
-div.instrument.vario div.vario {
-  transform: rotate(0deg);
-}
-div.instrument.speed div.airspeed {
-  transform: rotate(90deg);
-}
 div.instrument.altimeter div.pressure {
   transform: rotate(40deg);
 }
