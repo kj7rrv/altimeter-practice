@@ -1,4 +1,4 @@
-const altimeter = $.flightIndicator('#altimeter', 'altimeter')
+const altimeter = $.altimeter('#altimeter')
 const input = document.querySelector("#input")
 const button = document.querySelector("#button")
 
