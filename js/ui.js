@@ -95,15 +95,23 @@ function getValue(key, defaults) {
 const defaults = {
     "minimum": -300,
     "maximum": 18000,
-    "increment": 10
+    "increment": 10,
+    "show-answers": 0
 }
 
 for (const key in defaults) {
     const element = document.getElementById(key)
-    element.value = getValue(key, defaults)
-    element.addEventListener("change", function(e) {
-        localStorage.setItem(e.target.id, e.target.value)
-    })
+    if (element.attributes.type.value == "checkbox") {
+        element.checked = getValue(key, defaults)
+        element.addEventListener("change", function(e) {
+            localStorage.setItem(e.target.id, Number(e.target.checked))
+        })
+    } else {
+        element.value = getValue(key, defaults)
+        element.addEventListener("change", function(e) {
+            localStorage.setItem(e.target.id, e.target.value)
+        })
+    }
 }
 
 function update() {
@@ -129,9 +137,13 @@ button.addEventListener("click", function(e){
         }, 1000)
     } else {
         input.classList = ["incorrect"]
-        setTimeout(function(){
-            input.value = ""
-            input.classList = []
-        }, 1000)
+        if (getValue("show-answers", defaults)) {
+            input.value = altitude
+        } else {
+            setTimeout(function(){
+                input.value = ""
+                input.classList = []
+            }, 1000)
+        }
     }
 })
