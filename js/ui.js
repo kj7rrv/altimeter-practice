@@ -67,6 +67,10 @@ function Altimeter(placeholder) {
     return built
 }
 
+const main = document.querySelector("#main")
+const settings = document.querySelector("#settings")
+const main_link = document.querySelector("#main-link")
+const settings_link = document.querySelector("#settings-link")
 const altimeter = new Altimeter(document.querySelector("#altimeter"))
 const input = document.querySelector("#input")
 const button = document.querySelector("#button")
@@ -95,4 +99,16 @@ button.addEventListener("click", function(e){
             input.classList = []
         }, 1000)
     }
+})
+
+main_link.addEventListener("click", function(e) {
+    e.preventDefault()
+    main.style["display"] = "block"
+    settings.style["display"] = "none"
+})
+
+settings_link.addEventListener("click", function(e) {
+    e.preventDefault()
+    main.style["display"] = "none"
+    settings.style["display"] = "block"
 })

@@ -73,3 +73,7 @@ body {
 a {
     color: #8888FF;
 }
+
+#settings {
+    display: none
+}

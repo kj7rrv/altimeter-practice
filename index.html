@@ -22,14 +22,20 @@ Published under GPLv3 License.
     <body>
         <h1>ALTIMETER PRACTICE</h1>
         <p><a href="https://github.com/kj7rrv/altimeter-practice">OPEN SOURCE - GPLv3</a></p>
-        <div class="examples text-center">
-            <div>
-                <span id="altimeter"></span>
+        <div id="main">
+            <p><a href="" id="settings-link">SETTINGS</a></p>
+            <div class="examples text-center">
+                <div>
+                    <span id="altimeter"></span>
+                </div>
             </div>
+            <form id="input_box">
+                <input type="text" inputmode="numeric" autocomplete="off" id="input"><button id="button">OK</button>
+            </form>
         </div>
-        <form id="input_box">
-            <input type="text" inputmode="numeric" autocomplete="off" id="input"><button id="button">OK</button>
-        </form>
+        <div id="settings">
+            <p><a id="main-link">GO BACK</a></p>
+        </div>
         <script src="js/ui.js"></script>
     </body>
 </html>
