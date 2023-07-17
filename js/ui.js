@@ -96,6 +96,7 @@ const defaults = {
     "minimum": -300,
     "maximum": 18000,
     "increment": 10,
+    "margin": 0,
     "show-answers": 0
 }
 
@@ -128,7 +129,7 @@ let altitude = update()
 
 button.addEventListener("click", function(e){
     e.preventDefault()
-    if (input.value == altitude) {
+    if (altitude - getValue("margin", defaults) <= input.value && input.value <= altitude + getValue("margin", defaults)) {
         input.classList = ["correct"]
         setTimeout(function(){
             altitude = update()
