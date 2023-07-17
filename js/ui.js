@@ -93,7 +93,7 @@ function getValue(key, defaults) {
 }
 
 const defaults = {
-    "minimum": -300,
+    "minimum": 0,
     "maximum": 18000,
     "increment": 10,
     "margin": 0,
