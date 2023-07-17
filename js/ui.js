@@ -75,32 +75,6 @@ const altimeter = new Altimeter(document.querySelector("#altimeter"))
 const input = document.querySelector("#input")
 const button = document.querySelector("#button")
 
-function update(min, max, inc) {
-    const alt = Math.round(Math.random()**3 * (max - min) / inc) * inc + min
-    altimeter.setAltitude(alt)
-    return alt
-}
-
-let altitude = update(0, 18000, 10)
-
-button.addEventListener("click", function(e){
-    e.preventDefault()
-    if (input.value == altitude) {
-        input.classList = ["correct"]
-        setTimeout(function(){
-            altitude = update(0, 18000, 10)
-            input.value = ""
-            input.classList = []
-        }, 1000)
-    } else {
-        input.classList = ["incorrect"]
-        setTimeout(function(){
-            input.value = ""
-            input.classList = []
-        }, 1000)
-    }
-})
-
 main_link.addEventListener("click", function(e) {
     e.preventDefault()
     main.style["display"] = "block"
@@ -111,4 +85,53 @@ settings_link.addEventListener("click", function(e) {
     e.preventDefault()
     main.style["display"] = "none"
     settings.style["display"] = "block"
+})
+
+function getValue(key, defaults) {
+    const stored = localStorage.getItem(key)
+    return Number((stored === null)?defaults[key]:stored)
+}
+
+const defaults = {
+    "minimum": -300,
+    "maximum": 18000,
+    "increment": 10
+}
+
+for (const key in defaults) {
+    const element = document.getElementById(key)
+    element.value = getValue(key, defaults)
+    element.addEventListener("change", function(e) {
+        localStorage.setItem(e.target.id, e.target.value)
+    })
+}
+
+function update() {
+    const min = getValue("minimum", defaults)
+    const max = getValue("maximum", defaults)
+    const inc = getValue("increment", defaults)
+
+    const alt = Math.round(Math.random()**3 * (max - min) / inc) * inc + min
+    altimeter.setAltitude(alt)
+    return alt
+}
+
+let altitude = update()
+
+button.addEventListener("click", function(e){
+    e.preventDefault()
+    if (input.value == altitude) {
+        input.classList = ["correct"]
+        setTimeout(function(){
+            altitude = update()
+            input.value = ""
+            input.classList = []
+        }, 1000)
+    } else {
+        input.classList = ["incorrect"]
+        setTimeout(function(){
+            input.value = ""
+            input.classList = []
+        }, 1000)
+    }
 })

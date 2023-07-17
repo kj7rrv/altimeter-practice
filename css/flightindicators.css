@@ -45,14 +45,14 @@ body {
     text-align: center;
 }
 
-#input {
+input {
     font-size: 24px;
     border: none;
     background-color: black;
+    outline: none;
     color: white;
     font-family: monospace;
     width: 5em;
-    outline: none;
 }
 
 #input.correct {
@@ -75,5 +75,19 @@ a {
 }
 
 #settings {
-    display: none
+    display: none;
+}
+
+#settings table {
+    margin: auto;
+}
+
+td.label {
+    font-size: 24px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+input[type="number"] {
+    text-align: right;
 }
